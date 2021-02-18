@@ -42,6 +42,7 @@ const mockRouter: NextRouter = {
         emit: jest.fn(),
     },
     isFallback: false,
+    isLocaleDomain: false,
 };
 
 // Where you add your providers for mock testing wrapper
