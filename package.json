@@ -4,9 +4,9 @@
     "private": true,
     "dependencies": {
         "@material-ui/core": "^4.11.3",
-        "next": "^10.0.7",
-        "react": "^17.0.1",
-        "react-dom": "^17.0.1"
+        "next": "^10.0.9",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
     },
     "scripts": {
         "build": "next build",
@@ -19,29 +19,29 @@
         "quality": "npm run type-check && npm run lint && npm run test"
     },
     "devDependencies": {
-        "@babel/core": "^7.13.1",
-        "@babel/node": "^7.13.0",
+        "@babel/core": "^7.13.10",
+        "@babel/node": "^7.13.12",
         "@babel/plugin-transform-typescript": "^7.13.0",
-        "@babel/preset-env": "^7.13.5",
+        "@babel/preset-env": "^7.13.12",
         "@babel/preset-typescript": "^7.13.0",
-        "@testing-library/dom": "^7.29.6",
+        "@testing-library/dom": "^7.30.0",
         "@testing-library/jest-dom": "^5.11.9",
         "@testing-library/react": "^11.2.5",
-        "@types/node": "^14.14.31",
-        "@types/react": "^17.0.2",
-        "@types/react-dom": "^17.0.1",
-        "@typescript-eslint/eslint-plugin": "^4.15.2",
-        "@typescript-eslint/parser": "^4.15.2",
+        "@types/node": "^14.14.35",
+        "@types/react": "^17.0.3",
+        "@types/react-dom": "^17.0.3",
+        "@typescript-eslint/eslint-plugin": "^4.19.0",
+        "@typescript-eslint/parser": "^4.19.0",
         "babel-eslint": "^10.1.0",
         "babel-jest": "^26.6.3",
-        "eslint": "^7.20.0",
+        "eslint": "^7.22.0",
         "eslint-config-prettier": "^8.1.0",
         "eslint-plugin-prettier": "^3.3.1",
-        "eslint-plugin-react": "^7.22.0",
+        "eslint-plugin-react": "^7.23.0",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^26.6.3",
         "prettier": "^2.2.1",
         "ts-node": "^9.1.1",
-        "typescript": "^4.2.2"
+        "typescript": "^4.2.3"
     }
 }
