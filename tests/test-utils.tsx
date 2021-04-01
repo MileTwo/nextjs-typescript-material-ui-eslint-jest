@@ -43,6 +43,7 @@ const mockRouter: NextRouter = {
     },
     isFallback: false,
     isLocaleDomain: false,
+    isPreview: false,
 };
 
 // Where you add your providers for mock testing wrapper
