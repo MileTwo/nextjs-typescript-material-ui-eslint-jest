@@ -2,9 +2,8 @@ import { Button, Grid, makeStyles, Theme, Typography } from '@material-ui/core';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-
-import { Tool, tools } from '../../lib/tools';
 import { ReactElement } from 'react';
+import { PrismaClient, Tool } from '@prisma/client';
 
 const useStyles = makeStyles((theme: Theme) => ({
     description: {
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 interface Props {
-    tool?: Tool;
+    tool: Tool;
 }
 
 export default function ToolInfo({ tool }: Props): ReactElement {
@@ -53,7 +52,7 @@ export default function ToolInfo({ tool }: Props): ReactElement {
             </Grid>
             <Grid item xs={12} container>
                 {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
-                {tool.image && <Image {...tool.image} data-testid="image" />}
+                {tool.image && <Image src={tool.image} width={50} height={50} data-testid="image" />}
                 <Typography variant="h2" className={classes.title}>
                     {tool.name}
                 </Typography>
@@ -79,20 +78,27 @@ export default function ToolInfo({ tool }: Props): ReactElement {
 
 // https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation
 export async function getStaticPaths() {
+    const prisma = new PrismaClient();
+    const tools = await prisma.tool.findMany();
+    prisma.$disconnect();
     return {
-        paths: tools.map((tool) => ({ params: { name: tool.name } })),
+        paths: tools.map((tool) => ({ params: { id: `${tool.id}` } })),
         fallback: false,
     };
 }
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
-    if (params?.name) {
-        const tool = tools.find(({ name: toolName }) => toolName === params.name);
-        return {
-            props: { tool },
-        };
+    if (params?.id) {
+        const prisma = new PrismaClient();
+        const tool = await prisma.tool.findUnique({ where: { id: Number(params.id) } });
+
+        if (tool) {
+            return {
+                props: { tool },
+            };
+        }
     }
     return {
-        props: {},
+        notFound: true,
     };
 };
