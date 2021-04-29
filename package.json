@@ -19,12 +19,12 @@
         "type-check": "tsc",
         "quality": "npm run type-check && npm run lint && npm run test",
         "generate": "prisma generate",
-        "migrate": "prisma migrate dev --preview-feature",
-        "deploy": "prisma migrate deploy --preview-feature",
-        "reset": "prisma migrate reset --preview-feature",
+        "migrate": "prisma migrate dev",
+        "deploy": "prisma migrate deploy",
+        "reset": "prisma migrate reset",
         "seed": "prisma db seed --preview-feature",
         "studio": "prisma studio",
-        "prisma": "npm run format && npm run generate && npm run migrate && npm run seed"
+        "prisma": "prisma format && npm run generate && npm run migrate && npm run seed"
     },
     "devDependencies": {
         "@babel/core": "^7.13.16",

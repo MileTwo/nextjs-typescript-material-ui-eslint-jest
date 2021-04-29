@@ -18,6 +18,9 @@ yarn-error.log*
 # Next.js
 /.next
 
+# Prisma
+/prisma/*.db
+
 # testing
 /coverage
 
