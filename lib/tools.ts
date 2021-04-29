@@ -9,11 +9,31 @@ export const tools: Omit<Tool, 'id'>[] = [
         image: '/typescript.svg',
     },
     {
+        name: 'Prisma',
+        description:
+            'Prisma helps app developers build faster and make fewer errors with an open source ORM for PostgreSQL, MySQL and SQLite.',
+        link: 'https://www.prisma.io/',
+        image: '/prisma.svg',
+    },
+    {
         name: 'Material UI',
         description:
             'React components for faster and easier web development. Build your own design system, or start with Material Design.',
         link: 'https://material-ui.com/',
         image: '/material-ui.svg',
+    },
+    {
+        name: 'SWR',
+        description:
+            'The name “SWR” is derived from stale-while-revalidate, a HTTP cache invalidation strategy popularized by HTTP RFC 5861. SWR is a strategy to first return the data from cache (stale), then send the fetch request (revalidate), and finally come with the up-to-date data.',
+        link: 'https://swr.vercel.app/',
+        image: '/swr.svg',
+    },
+    {
+        name: 'React Hook Forms',
+        description: 'Performant, flexible and extensible forms with easy-to-use validation.',
+        link: 'https://react-hook-form.com/',
+        image: '/react-hook-form.jpeg',
     },
     {
         name: 'Jest',
