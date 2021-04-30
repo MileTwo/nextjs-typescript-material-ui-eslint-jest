@@ -6,7 +6,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
 import theme from '../lib/theme';
 
-const client = new ApolloClient({
+export const client = new ApolloClient({
     uri: '/api/graphql',
     cache: new InMemoryCache(),
 });

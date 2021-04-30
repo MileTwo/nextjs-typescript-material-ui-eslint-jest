@@ -1,12 +1,11 @@
 import { Button, Grid, makeStyles, Theme, Typography } from '@material-ui/core';
-import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { ReactElement } from 'react';
-import { Tool } from '@prisma/client';
 import { useRouter } from 'next/router';
 
 import Image from '../../components/Image';
-import prisma from '../../prisma/prisma';
+import gql from 'graphql-tag';
+import { useToolQuery } from '../../gen/graphql-types';
 
 const useStyles = makeStyles((theme: Theme) => ({
     description: {
@@ -21,21 +20,27 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }));
 
-interface Props {
-    tool: Tool;
-}
-
 interface URLParams {
     id?: string;
 }
 
-export default function ToolInfo({ tool }: Props): ReactElement {
+export const QUERY_TOOL = gql`
+    query Tool($id: Int!) {
+        tool(where: { id: $id }) {
+            id
+            name
+            description
+            link
+            image
+        }
+    }
+`;
+
+export default function ToolInfo(): ReactElement {
     const classes = useStyles();
     const { query }: { query: URLParams } = useRouter();
     // client side fetch
-    const { data = tool } = useSWR<Tool>(query?.id ? restEndpoints.tool(query.id) : null, fetcher, {
-        initialData: tool,
-    });
+    const { data } = useToolQuery({ variables: { id: Number(query.id) } });
 
     if (!data) {
         return (
@@ -53,6 +58,7 @@ export default function ToolInfo({ tool }: Props): ReactElement {
             </Grid>
         );
     }
+
     return (
         <Grid container spacing={4} className={classes.root}>
             <Grid item xs={12}>
@@ -63,22 +69,22 @@ export default function ToolInfo({ tool }: Props): ReactElement {
                 </Link>
             </Grid>
             <Grid item xs={12} container>
-                {data.image && <Image image={data.image} name={data.name} />}
+                {data?.tool?.image && <Image image={data?.tool?.image} name={data?.tool?.name} />}
                 <Typography variant="h2" className={classes.title}>
-                    {data.name}
+                    {data?.tool?.name}
                 </Typography>
             </Grid>
             <Grid item xs={12}>
                 <Typography variant="body1" className={classes.description}>
-                    {data.description}
+                    {data?.tool?.description}
                 </Typography>
             </Grid>
             <Grid item xs={12}>
                 <Button
                     variant="contained"
-                    href={data.link}
+                    href={data?.tool?.link}
                     color="primary"
-                    aria-label={`Link to ${data.name} documentation`}
+                    aria-label={`Link to ${data?.tool?.name} documentation`}
                 >
                     Visit documentation
                 </Button>
@@ -86,27 +92,3 @@ export default function ToolInfo({ tool }: Props): ReactElement {
         </Grid>
     );
 }
-
-// https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation
-export async function getStaticPaths() {
-    const tools = await prisma().tool.findMany();
-
-    return {
-        paths: tools.map((tool) => ({ params: { id: `${tool.id}` } })),
-        fallback: false,
-    };
-}
-
-export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
-    if (params?.id) {
-        const tool = await prisma().tool.findUnique({ where: { id: Number(params.id) } });
-        if (tool) {
-            return {
-                props: { tool },
-            };
-        }
-    }
-    return {
-        notFound: true,
-    };
-};

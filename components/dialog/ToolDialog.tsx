@@ -1,12 +1,23 @@
 import { Dialog, DialogTitle, DialogContent, Grid, TextField, DialogActions, Button } from '@material-ui/core';
 import { Tool } from '@prisma/client';
+import gql from 'graphql-tag';
 import React, { ReactElement } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { useCreateToolMutation } from '../../gen/graphql-types';
+import { QUERY_TOOLS } from '../../pages';
 
 interface Props {
     open: boolean;
     onClose: () => void;
 }
+
+export const MUTATION_CREATE_TOOL = gql`
+    mutation CreateTool($name: String!, $description: String!, $link: String!, $image: String) {
+        createTool(data: { name: $name, description: $description, link: $link, image: $image }) {
+            id
+        }
+    }
+`;
 
 export type ToolForm = Omit<Tool, 'id'>;
 
@@ -19,20 +30,12 @@ export default function ToolDialog({ open, onClose }: Props): ReactElement {
             link: '',
         },
     });
+    const [createTool] = useCreateToolMutation();
 
     const onSubmit = async (values: ToolForm) => {
         const { name, description, image, link } = values;
-        // const response = await fetch(restEndpoints.tools, {
-        //     body: JSON.stringify({ name, description, image, link }),
-        //     method: 'POST',
-        // });
-        // if (response) {
-        //     const data: Tool = await response.json();
-        //     if (data.id) {
-        //         mutate(restEndpoints.tools);
-        //         onClose();
-        //     }
-        // }
+        await createTool({ variables: { name, description, link, image }, refetchQueries: [{ query: QUERY_TOOLS }] });
+        onClose();
     };
 
     return (
@@ -73,6 +76,7 @@ export default function ToolDialog({ open, onClose }: Props): ReactElement {
                                     <TextField
                                         {...field}
                                         rows={4}
+                                        required
                                         multiline
                                         variant="outlined"
                                         label="Tool Description"
@@ -104,6 +108,7 @@ export default function ToolDialog({ open, onClose }: Props): ReactElement {
                                     <TextField
                                         {...field}
                                         multiline
+                                        required
                                         variant="outlined"
                                         label="Tool website"
                                         margin="dense"
