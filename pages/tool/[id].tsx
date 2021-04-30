@@ -3,12 +3,9 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 import { Tool } from '@prisma/client';
-import useSWR from 'swr';
 import { useRouter } from 'next/router';
 
 import Image from '../../components/Image';
-import restEndpoints from '../../lib/restEndpoints';
-import { fetcher } from '../../lib/fetcher';
 import prisma from '../../prisma/prisma';
 
 const useStyles = makeStyles((theme: Theme) => ({

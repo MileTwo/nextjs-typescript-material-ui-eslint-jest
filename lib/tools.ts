@@ -23,11 +23,17 @@ export const tools: Omit<Tool, 'id'>[] = [
         image: '/material-ui.svg',
     },
     {
-        name: 'SWR',
+        name: 'Apollo Client React',
+        description: "Manage the entirety of your React app's state and seamlessly execute GraphQL operations.",
+        link: 'https://www.apollographql.com/docs/react/',
+        image: '/apollo.svg',
+    },
+    {
+        name: 'GraphQL',
         description:
-            'The name “SWR” is derived from stale-while-revalidate, a HTTP cache invalidation strategy popularized by HTTP RFC 5861. SWR is a strategy to first return the data from cache (stale), then send the fetch request (revalidate), and finally come with the up-to-date data.',
-        link: 'https://swr.vercel.app/',
-        image: '/swr.svg',
+            'GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.',
+        link: 'https://graphql.org/',
+        image: '/apollo.svg',
     },
     {
         name: 'React Hook Forms',

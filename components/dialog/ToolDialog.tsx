@@ -2,8 +2,6 @@ import { Dialog, DialogTitle, DialogContent, Grid, TextField, DialogActions, But
 import { Tool } from '@prisma/client';
 import React, { ReactElement } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { mutate } from 'swr';
-import restEndpoints from '../../lib/restEndpoints';
 
 interface Props {
     open: boolean;
@@ -24,17 +22,17 @@ export default function ToolDialog({ open, onClose }: Props): ReactElement {
 
     const onSubmit = async (values: ToolForm) => {
         const { name, description, image, link } = values;
-        const response = await fetch(restEndpoints.tools, {
-            body: JSON.stringify({ name, description, image, link }),
-            method: 'POST',
-        });
-        if (response) {
-            const data: Tool = await response.json();
-            if (data.id) {
-                mutate(restEndpoints.tools);
-                onClose();
-            }
-        }
+        // const response = await fetch(restEndpoints.tools, {
+        //     body: JSON.stringify({ name, description, image, link }),
+        //     method: 'POST',
+        // });
+        // if (response) {
+        //     const data: Tool = await response.json();
+        //     if (data.id) {
+        //         mutate(restEndpoints.tools);
+        //         onClose();
+        //     }
+        // }
     };
 
     return (

@@ -1,0 +1,20 @@
+## codegen.yml
+overwrite: true
+schema: 'http://localhost:3000/graphql'
+documents: '{components,components-redesign,contexts,hooks,lib,pages}/**/*.{ts,tsx}'
+generates:
+    gen/graphql-types.tsx:
+        config:
+            dedupeOperationSuffix: true
+            withHooks: true
+            withComponent: false
+            withHOC: false
+        plugins:
+            - 'typescript'
+            - 'typescript-operations'
+            - 'typescript-react-apollo'
+    gen/fragmentTypes.json:
+        plugins:
+            - 'fragment-matcher'
+        config:
+            apolloClientVersion: 3

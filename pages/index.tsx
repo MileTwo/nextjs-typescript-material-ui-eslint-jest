@@ -1,15 +1,13 @@
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { makeStyles, createStyles, Typography, Theme, Paper, ListItem, List, Grid, Button } from '@material-ui/core';
-import useSWR from 'swr';
 
 import { Tool } from '.prisma/client';
 import prisma from '../prisma/prisma';
-import restEndpoints from '../lib/restEndpoints';
-import { fetcher } from '../lib/fetcher';
 import { useState } from 'react';
 import ToolDialog from '../components/dialog/ToolDialog';
 import Image from '../components/Image';
+import { gql, useQuery } from '@apollo/client';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -31,11 +29,23 @@ interface Props {
     tools: Tool[];
 }
 
+const QUERY_TOOLS = gql`
+    query Tools {
+        tools(orderBy: { name: asc }) {
+            id
+            name
+            description
+            link
+            image
+        }
+    }
+`;
+
 export default function Home({ tools }: Props) {
-    const classes = useStyles();
-    // CSR(Client-side rendering) example
-    const { data = tools } = useSWR<Tool[]>(restEndpoints.tools, fetcher, { initialData: tools });
     const [dialogOpen, setDialogOpen] = useState(false);
+    // CSR(Client-side rendering) example
+    const { data = { tools } } = useQuery(QUERY_TOOLS);
+    const classes = useStyles();
 
     return (
         <Grid container spacing={4} direction="column" className={classes.root}>
@@ -59,7 +69,7 @@ export default function Home({ tools }: Props) {
                 <Grid item>
                     <Paper className={classes.paper}>
                         <List aria-label="Project Tool List">
-                            {data.map(({ id, name, image }) => (
+                            {data.tools.map(({ id, name, image }) => (
                                 <ListItem key={id}>
                                     <Grid container alignItems="center" justify="space-between">
                                         {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
@@ -84,7 +94,7 @@ export default function Home({ tools }: Props) {
 
 // SSR (server-side rendering) example
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-    const tools = await prisma().tool.findMany();
+    const tools = await prisma().tool.findMany({ orderBy: { name: 'asc' } });
 
     return {
         props: {
