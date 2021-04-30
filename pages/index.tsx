@@ -1,9 +1,15 @@
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { makeStyles, createStyles, Typography, Theme, Paper, ListItem, List, Grid, Button } from '@material-ui/core';
+import useSWR from 'swr';
 
-import { tools } from '../lib/tools';
+import { Tool } from '.prisma/client';
+import prisma from '../prisma/prisma';
+import restEndpoints from '../lib/restEndpoints';
+import { fetcher } from '../lib/fetcher';
+import { useState } from 'react';
+import ToolDialog from '../components/dialog/ToolDialog';
+import Image from '../components/Image';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -22,11 +28,14 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface Props {
-    tools: { name: string; image?: { src: string; width: number; height: number } }[];
+    tools: Tool[];
 }
 
 export default function Home({ tools }: Props) {
     const classes = useStyles();
+    // CSR(Client-side rendering) example
+    const { data = tools } = useSWR<Tool[]>(restEndpoints.tools, fetcher, { initialData: tools });
+    const [dialogOpen, setDialogOpen] = useState(false);
 
     return (
         <Grid container spacing={4} direction="column" className={classes.root}>
@@ -38,17 +47,25 @@ export default function Home({ tools }: Props) {
             <Grid item container spacing={4} direction="column" xs={12} alignItems="center">
                 <Grid container item alignContent="center" justify="center">
                     <Typography variant="h5">Tools</Typography>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        className={classes.linkButton}
+                        onClick={() => setDialogOpen(true)}
+                    >
+                        Create
+                    </Button>
                 </Grid>
                 <Grid item>
                     <Paper className={classes.paper}>
-                        <List aria-label={tools.join(', ')}>
-                            {tools.map(({ name, image }) => (
-                                <ListItem key={name}>
+                        <List aria-label="Project Tool List">
+                            {data.map(({ id, name, image }) => (
+                                <ListItem key={id}>
                                     <Grid container alignItems="center" justify="space-between">
                                         {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
-                                        {image && <Image {...image} />}
+                                        {image && <Image image={image} name={name} />}
                                         <Typography variant="body1">{name}</Typography>
-                                        <Link href="/tool/[name]" as={`/tool/${name}`}>
+                                        <Link href="/tool/[id]" as={`/tool/${id}`}>
                                             <Button variant="contained" color="primary" className={classes.linkButton}>
                                                 Learn more
                                             </Button>
@@ -60,17 +77,18 @@ export default function Home({ tools }: Props) {
                     </Paper>
                 </Grid>
             </Grid>
+            <ToolDialog open={dialogOpen} onClose={() => setDialogOpen(false)} />
         </Grid>
     );
 }
 
+// SSR (server-side rendering) example
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
+    const tools = await prisma().tool.findMany();
+
     return {
         props: {
-            tools: tools.map(({ name, image }) => ({
-                name,
-                image,
-            })),
+            tools,
         },
     };
 };

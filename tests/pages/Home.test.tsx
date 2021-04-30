@@ -2,10 +2,15 @@
 import { render, screen } from '../test-utils';
 import Home, { getServerSideProps } from '../../pages/index';
 import { tools } from '../../lib/tools';
+import { PrismaClient } from '@prisma/client';
 
 describe('Home page', () => {
     it('should render without errors', async () => {
-        render(<Home tools={tools.map(({ name, image }) => ({ name, image }))} />);
+        render(
+            <Home
+                tools={tools.map(({ name, image, link, description }, id) => ({ name, image, link, description, id }))}
+            />
+        );
 
         // header
         expect(screen.getByRole('heading', { name: 'Next.js example' })).toBeInTheDocument();
@@ -24,15 +29,9 @@ describe('Home page', () => {
         expect(firstTool.querySelector('p', { name: tools[0].name })).toBeInTheDocument();
     });
     it('serverSideProps', async () => {
+        const prisma = new PrismaClient();
         // @ts-ignore
         const response = await getServerSideProps();
-        expect(response).toEqual({
-            props: {
-                tools: tools.map(({ name, image }) => ({
-                    name,
-                    image,
-                })),
-            },
-        });
+        expect(response).toEqual({ props: { tools: await prisma.tool.findMany() } });
     });
 });
