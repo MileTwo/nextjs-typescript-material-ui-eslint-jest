@@ -1,7 +1,7 @@
 ## codegen.yml
 overwrite: true
-schema: 'http://localhost:3000/graphql'
-documents: '{components,components-redesign,contexts,hooks,lib,pages}/**/*.{ts,tsx}'
+schema: 'http://localhost:3000/api/graphql'
+documents: '{components,lib,pages}/**/*.{ts,tsx}'
 generates:
     gen/graphql-types.tsx:
         config:
