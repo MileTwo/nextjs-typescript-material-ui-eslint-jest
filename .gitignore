@@ -6,6 +6,7 @@
 # misc
 .DS_Store
 .env.local
+.env
 .env.development.local
 .env.test.local
 .env.production.local
@@ -17,7 +18,8 @@ yarn-error.log*
 # Next.js
 /.next
 
+# Prisma
+/prisma/*.db
+
 # testing
 /coverage
-
-package-lock.json
