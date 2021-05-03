@@ -3,3 +3,4 @@ node_modules/
 charts/
 prisma/
 gen/
+next.config.js
