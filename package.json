@@ -35,7 +35,7 @@
         "studio": "prisma studio",
         "prisma": "prisma format && npm run generate && npm run migrate && npm run seed",
         "generate-types": "graphql-codegen --config codegen.yml",
-        "watch-queries": "graphql-codegen --config codegen.yml --watch"
+        "watch-queries": "npm run generate-types --watch"
     },
     "devDependencies": {
         "@babel/core": "^7.14.0",
