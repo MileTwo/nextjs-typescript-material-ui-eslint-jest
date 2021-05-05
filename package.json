@@ -33,7 +33,7 @@
         "reset": "prisma migrate reset",
         "seed": "prisma db seed --preview-feature",
         "studio": "prisma studio",
-        "prisma": "prisma format && npm run generate && npm run migrate && npm run seed",
+        "prisma": "prisma format && npm run migrate && npm run seed",
         "generate-types": "graphql-codegen --config codegen.yml",
         "watch-queries": "graphql-codegen --config codegen.yml --watch"
     },
