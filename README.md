@@ -1,3 +1,16 @@
+- [Next.js TypeScript Material UI quality checking project](#nextjs-typescript-material-ui-quality-checking-project)
+  - [Deploy your own](#deploy-your-own)
+  - [How to use](#how-to-use)
+  - [Scripts](#scripts)
+    - [build](#build)
+    - [dev](#dev)
+    - [format](#format)
+    - [lint](#lint)
+    - [start](#start)
+    - [test](#test)
+    - [type-check](#type-check)
+    - [quality](#quality)
+
 # Next.js TypeScript Material UI quality checking project
 
 Includes TypeScript, Material UI, ESLint, Jest, and React Testing Library
@@ -27,6 +40,9 @@ All scripts can be run by prefixing with `npm run`, for example `npm run build`
 ### build
 
 Builds the production application in the .next folder.
+```bash
+npm run build
+```
 
 ### dev
 
@@ -41,10 +57,17 @@ npm run dev -p 4000
 ### format
 
 Runs ESLint and Prettier auto-formatting.
+```bash
+npm run format
+```
 
 ### lint
 
 Runs ESLint static code analysis based on your `.eslintrc` configuration
+
+```bash
+npm run lint
+```
 
 ### start
 
@@ -60,10 +83,22 @@ npm run start -p 4000
 
 Runs Jest unit tests to validate changes between commits
 
+```bash
+npm run test
+```
+
 ### type-check
 
 Runs TypeScript compiler to validate there are no type errors between commits
 
+```bash
+npm run type-check
+```
+
 ### quality
 
 Runs `type-check`, `lint`, and `test` to make an better developer experience catching preventable quality errors.
+
+```bash
+npm run **quality**
+```
