@@ -1,4 +1,8 @@
-- [Next.js TypeScript Material UI quality checking project](#nextjs-typescript-material-ui-quality-checking-project)
+# Next.js TypeScript Material UI quality checking project
+
+
+Includes TypeScript, Material UI, ESLint, Jest, and React Testing Library
+
   - [Deploy your own](#deploy-your-own)
   - [How to use](#how-to-use)
   - [Scripts](#scripts)
@@ -9,13 +13,7 @@
     - [start](#start)
     - [test](#test)
     - [type-check](#type-check)
-    - [quality](#quality)
-
-# Next.js TypeScript Material UI quality checking project
-
-Includes TypeScript, Material UI, ESLint, Jest, and React Testing Library
-
-## Deploy your own
+    - [quality](#quality)## Deploy your own
 
 Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
 
@@ -100,5 +98,5 @@ npm run type-check
 Runs `type-check`, `lint`, and `test` to make an better developer experience catching preventable quality errors.
 
 ```bash
-npm run **quality**
+npm run quality
 ```
