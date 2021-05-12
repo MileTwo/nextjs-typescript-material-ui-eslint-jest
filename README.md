@@ -13,7 +13,8 @@ Includes TypeScript, Material UI, ESLint, Jest, and React Testing Library
     - [start](#start)
     - [test](#test)
     - [type-check](#type-check)
-    - [quality](#quality)## Deploy your own
+    - [quality](#quality)
+## Deploy your own
 
 Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
 
