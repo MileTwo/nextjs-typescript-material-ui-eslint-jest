@@ -1,5 +1,5 @@
 // you want to import from test-utils instead of testing-library/react since we overwrote the render function to support our wrapper providers
-import { render, screen } from '../test-utils';
+import { render, screen, waitFor } from '../test-utils';
 import Tool, { QUERY_TOOL } from '../../pages/tool/[id]';
 import { tools } from '../../lib/tools';
 
@@ -32,14 +32,14 @@ describe('Tool Page', () => {
         });
 
         // go home button
-        expect(screen.getByRole('button', { name: 'Link to Home' })).toBeInTheDocument();
+        waitFor(() => expect(screen.getByRole('button', { name: 'Link to Home' })).toBeInTheDocument());
         // header
-        expect(screen.getByRole('heading', { name: 'Apollo Client React' })).toBeInTheDocument();
+        waitFor(() => expect(screen.getByRole('heading', { name: 'Apollo Client React' })).toBeInTheDocument());
         // image
-        expect(screen.getByTestId('image')).toBeInTheDocument();
+        waitFor(() => expect(screen.getByTestId('image')).toBeInTheDocument());
         // description
-        expect(screen.getByText(tools[0].description));
+        waitFor(() => expect(screen.getByText(tools[0].description)));
         // link to docs
-        expect(screen.getByText('Visit documentation')).toBeInTheDocument();
+        waitFor(() => expect(screen.getByText('Visit documentation')).toBeInTheDocument());
     });
 });

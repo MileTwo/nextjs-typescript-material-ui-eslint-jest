@@ -1,5 +1,5 @@
 // you want to import from test-utils instead of testing-library/react since we overwrote the render function to support our wrapper providers
-import { render, screen } from '../test-utils';
+import { render, screen, waitFor } from '../test-utils';
 import Home, { QUERY_TOOLS } from '../../pages/index';
 import { tools } from '../../lib/tools';
 
@@ -35,14 +35,13 @@ describe('Home page', () => {
         expect(screen.getByRole('heading', { name: 'Tools' })).toBeInTheDocument();
 
         // array of tools
-        expect(screen.getAllByRole('listitem').length).toEqual(mocks[0].result.data.tools.length);
+        waitFor(() => expect(screen.getAllByRole('listitem').length).toEqual(mocks[0].result.data.tools.length));
         // link button to tool page
-        expect(screen.getAllByRole('button', { name: 'Learn more' }).length).toEqual(tools.length);
+        waitFor(() => expect(screen.getAllByRole('button', { name: 'Learn more' }).length).toEqual(tools.length));
         // image
-        const firstTool = screen.getAllByRole('listitem')[0];
-        expect(firstTool.querySelector('img')).toBeInTheDocument();
+        waitFor(() => expect(screen.getAllByRole('listitem')[0].querySelector('img')).toBeInTheDocument());
         // name
         // @ts-ignore
-        expect(firstTool.querySelector('p', { name: tools[0].name })).toBeInTheDocument();
+        waitFor(() => expect(firstTool.querySelector('p', { name: tools[0].name })).toBeInTheDocument());
     });
 });
