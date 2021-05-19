@@ -23,5 +23,3 @@ yarn-error.log*
 
 # testing
 /coverage
-
-package-lock.json
