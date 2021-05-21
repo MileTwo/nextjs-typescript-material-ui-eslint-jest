@@ -1,6 +1,7 @@
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from 'next/head';
 import { makeStyles, createStyles, Typography, Theme, Paper, ListItem, List, Grid, Button } from '@material-ui/core';
 
 import { tools } from '../lib/tools';
@@ -18,6 +19,9 @@ const useStyles = makeStyles((theme: Theme) =>
         linkButton: {
             marginLeft: '1em',
         },
+        header: {
+            padding: '1em 2em',
+        },
     })
 );
 
@@ -29,38 +33,53 @@ export default function Home({ tools }: Props) {
     const classes = useStyles();
 
     return (
-        <Grid container spacing={4} direction="column" className={classes.root}>
-            <Grid item>
-                <Typography variant="h4" component="h1" gutterBottom>
-                    Next.js example
-                </Typography>
-            </Grid>
-            <Grid item container spacing={4} direction="column" xs={12} alignItems="center">
-                <Grid container item alignContent="center" justify="center">
-                    <Typography variant="h5">Tools</Typography>
-                </Grid>
-                <Grid item>
-                    <Paper className={classes.paper}>
-                        <List aria-label={tools.join(', ')}>
-                            {tools.map(({ name, image }) => (
-                                <ListItem key={name}>
-                                    <Grid container alignItems="center" justify="space-between">
-                                        {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
-                                        {image && <Image {...image} />}
-                                        <Typography variant="body1">{name}</Typography>
-                                        <Link href="/tool/[name]" as={`/tool/${name}`}>
-                                            <Button variant="contained" color="primary" className={classes.linkButton}>
-                                                Learn more
-                                            </Button>
-                                        </Link>
-                                    </Grid>
-                                </ListItem>
-                            ))}
-                        </List>
-                    </Paper>
-                </Grid>
-            </Grid>
-        </Grid>
+        <>
+            <Head>
+                <title>Next.js example</title>
+            </Head>
+            <>
+                <header className={classes.header}>
+                    <Typography variant="h4" component="h1" gutterBottom>
+                        Next.js example
+                    </Typography>
+                </header>
+                <main>
+                    <Grid container spacing={4} direction="column" className={classes.root}>
+                        <Grid item container spacing={4} direction="column" xs={12} alignItems="center">
+                            <Grid container item alignContent="center" justify="center">
+                                <Typography variant="h5" component="h2">
+                                    Tools
+                                </Typography>
+                            </Grid>
+                            <Grid item>
+                                <Paper className={classes.paper}>
+                                    <List aria-label={tools.join(', ')}>
+                                        {tools.map(({ name, image }) => (
+                                            <ListItem key={name}>
+                                                <Grid container alignItems="center" justify="space-between">
+                                                    {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
+                                                    {image && <Image {...image} />}
+                                                    <Typography variant="body1">{name}</Typography>
+                                                    <Link href="/tool/[name]" as={`/tool/${name}`}>
+                                                        <Button
+                                                            variant="contained"
+                                                            color="primary"
+                                                            className={classes.linkButton}
+                                                        >
+                                                            Learn more
+                                                        </Button>
+                                                    </Link>
+                                                </Grid>
+                                            </ListItem>
+                                        ))}
+                                    </List>
+                                </Paper>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </main>
+            </>
+        </>
     );
 }
 
