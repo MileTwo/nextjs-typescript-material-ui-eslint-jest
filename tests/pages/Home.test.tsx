@@ -7,17 +7,16 @@ describe('Home page', () => {
     it('should render without errors', async () => {
         render(<Home tools={tools.map(({ name, image }) => ({ name, image }))} />);
 
-        // header
-        expect(screen.getByRole('heading', { name: 'Next.js example' })).toBeInTheDocument();
         // tools header
         expect(screen.getByRole('heading', { name: 'Tools' })).toBeInTheDocument();
-
         // array of tools
         expect(screen.getAllByRole('listitem').length).toEqual(tools.length);
-        // link button to tool page
-        expect(screen.getAllByRole('button', { name: 'Learn more' }).length).toEqual(tools.length);
-        // image
+        expect(screen.getAllByRole('link').length).toEqual(tools.length);
+
         const firstTool = screen.getAllByRole('listitem')[0];
+        // Semantics check of 'link button' is anchor tag to tool page ( Accessibility test )
+        expect(firstTool.querySelector('a')).toBeInTheDocument();
+        // image
         expect(firstTool.querySelector('img')).toBeInTheDocument();
         // name
         // @ts-ignore

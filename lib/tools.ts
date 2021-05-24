@@ -64,6 +64,18 @@ export const tools: Tool[] = [
             alt: 'Prettier',
         },
     },
+    {
+        name: 'Deque Axe',
+        description:
+            'Test your React application with the axe-core accessibility testing library. Results will show in the Chrome DevTools console.',
+        link: 'https://github.com/dequelabs/axe-core-npm/blob/develop/packages/react/README.md',
+        image: {
+            src: '/axe.svg',
+            width: 50,
+            height: 50,
+            alt: 'axe-core/react',
+        },
+    },
 ];
 
 export interface Tool {

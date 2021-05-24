@@ -1,19 +1,20 @@
 # Next.js TypeScript Material UI quality checking project
 
-
 Includes TypeScript, Material UI, ESLint, Jest, and React Testing Library
 
-  - [Deploy your own](#deploy-your-own)
-  - [How to use](#how-to-use)
-  - [Scripts](#scripts)
-    - [build](#build)
-    - [dev](#dev)
-    - [format](#format)
-    - [lint](#lint)
-    - [start](#start)
-    - [test](#test)
-    - [type-check](#type-check)
-    - [quality](#quality)
+-   [Deploy your own](#deploy-your-own)
+-   [How to use](#how-to-use)
+-   [Scripts](#scripts)
+    -   [build](#build)
+    -   [dev](#dev)
+    -   [format](#format)
+    -   [lint](#lint)
+    -   [start](#start)
+    -   [test](#test)
+    -   [type-check](#type-check)
+    -   [quality](#quality)
+-   [Accessibility ](#accessibility)
+
 ## Deploy your own
 
 Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
@@ -39,6 +40,7 @@ All scripts can be run by prefixing with `npm run`, for example `npm run build`
 ### build
 
 Builds the production application in the .next folder.
+
 ```bash
 npm run build
 ```
@@ -56,6 +58,7 @@ npm run dev -p 4000
 ### format
 
 Runs ESLint and Prettier auto-formatting.
+
 ```bash
 npm run format
 ```
@@ -101,3 +104,9 @@ Runs `type-check`, `lint`, and `test` to make an better developer experience cat
 ```bash
 npm run quality
 ```
+
+## Accessibility
+
+### @axe-core/react
+
+Runs in development environment and logs accessibility error results in dev tools console. Tool implementation is in `pages/_app.tsx`.
