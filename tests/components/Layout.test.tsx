@@ -4,7 +4,7 @@ import Layout from '../../components/layout';
 describe('Home page', () => {
     it('should render without errors', async () => {
         render(
-            <Layout>
+            <Layout title="Next.js example">
                 <div></div>
             </Layout>
         );

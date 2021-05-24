@@ -3,7 +3,6 @@ import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../lib/theme';
 import React, { useEffect } from 'react';
-import Layout from '../components/layout';
 
 // Determines if we are running on server or in client.
 const isServerSideRendered = () => {
@@ -35,9 +34,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <ThemeProvider theme={theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
+            <Component {...pageProps} />
         </ThemeProvider>
     );
 };

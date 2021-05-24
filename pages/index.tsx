@@ -1,8 +1,8 @@
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import Head from 'next/head';
 import { makeStyles, createStyles, Typography, Theme, Paper, ListItem, List, Grid, Button } from '@material-ui/core';
+import Layout from '../components/layout';
 
 import { tools } from '../lib/tools';
 
@@ -31,45 +31,44 @@ export default function Home({ tools }: Props) {
 
     return (
         <>
-            <Head>
-                <title>Next.js example</title>
-            </Head>
-            <Grid container spacing={4} direction="column" className={classes.root}>
-                <Grid item container spacing={4} direction="column" xs={12} alignItems="center">
-                    <Grid container item alignContent="center" justify="center">
-                        <Typography variant="h5" component="h2">
-                            Tools
-                        </Typography>
-                    </Grid>
-                    <Grid item>
-                        <Paper className={classes.paper}>
-                            <List aria-label={tools.join(', ')}>
-                                {tools.map(({ name, image }) => (
-                                    <ListItem key={name}>
-                                        <Grid container alignItems="center" justify="space-between">
-                                            {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
-                                            {image && <Image {...image} aria-hidden="true" />}
-                                            <Typography variant="body1" aria-hidden="true">
-                                                {name}
-                                            </Typography>
-                                            <Link href="/tool/[name]" as={`/tool/${name}`} passHref>
-                                                <Button
-                                                    variant="contained"
-                                                    color="primary"
-                                                    className={classes.linkButton}
-                                                    aria-label={`Learn more about ${name}`}
-                                                >
-                                                    <span aria-hidden="true">Learn more</span>
-                                                </Button>
-                                            </Link>
-                                        </Grid>
-                                    </ListItem>
-                                ))}
-                            </List>
-                        </Paper>
+            <Layout title="Next.js example">
+                <Grid container spacing={4} direction="column" className={classes.root}>
+                    <Grid item container spacing={4} direction="column" xs={12} alignItems="center">
+                        <Grid container item alignContent="center" justify="center">
+                            <Typography variant="h5" component="h2">
+                                Tools
+                            </Typography>
+                        </Grid>
+                        <Grid item>
+                            <Paper className={classes.paper}>
+                                <List aria-label={tools.join(', ')}>
+                                    {tools.map(({ name, image }) => (
+                                        <ListItem key={name}>
+                                            <Grid container alignItems="center" justify="space-between">
+                                                {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
+                                                {image && <Image {...image} aria-hidden="true" />}
+                                                <Typography variant="body1" aria-hidden="true">
+                                                    {name}
+                                                </Typography>
+                                                <Link href="/tool/[name]" as={`/tool/${name}`} passHref>
+                                                    <Button
+                                                        variant="contained"
+                                                        color="primary"
+                                                        className={classes.linkButton}
+                                                        aria-label={`Learn more about ${name}`}
+                                                    >
+                                                        <span aria-hidden="true">Learn more</span>
+                                                    </Button>
+                                                </Link>
+                                            </Grid>
+                                        </ListItem>
+                                    ))}
+                                </List>
+                            </Paper>
+                        </Grid>
                     </Grid>
                 </Grid>
-            </Grid>
+            </Layout>
         </>
     );
 }

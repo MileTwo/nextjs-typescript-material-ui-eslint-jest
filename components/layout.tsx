@@ -1,5 +1,6 @@
 import { makeStyles, createStyles, Typography } from '@material-ui/core';
 import { ReactElement } from 'react';
+import Head from 'next/head';
 
 const useStyles = makeStyles(() =>
     createStyles({
@@ -9,11 +10,19 @@ const useStyles = makeStyles(() =>
     })
 );
 
-const Layout = ({ children }: { children: ReactElement | ReactElement[] | string }): ReactElement => {
+interface LayoutProps {
+    children: ReactElement[] | ReactElement | string;
+    title: string;
+}
+
+const Layout = ({ children, title }: LayoutProps): ReactElement => {
     const classes = useStyles();
 
     return (
         <>
+            <Head>
+                <title>{title}</title>
+            </Head>
             <header className={classes.header}>
                 <Typography variant="h4" component="h1" gutterBottom>
                     Next.js example
