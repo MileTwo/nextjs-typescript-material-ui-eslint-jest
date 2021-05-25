@@ -29,15 +29,14 @@ describe('Home page', () => {
     it('should render without errors', async () => {
         render(<Home />, { mocks });
 
-        // header
-        expect(screen.getByRole('heading', { name: 'Next.js example' })).toBeInTheDocument();
         // tools header
         expect(screen.getByRole('heading', { name: 'Tools' })).toBeInTheDocument();
-
         // array of tools
         waitFor(() => expect(screen.getAllByRole('listitem').length).toEqual(mocks[0].result.data.tools.length));
         // link button to tool page
-        waitFor(() => expect(screen.getAllByRole('button', { name: 'Learn more' }).length).toEqual(tools.length));
+        waitFor(() => expect(screen.getAllByRole('link').length).toEqual(tools.length));
+        // Semantics check of 'link button' is anchor tag to tool page ( Accessibility test )
+        waitFor(() => expect(screen.getAllByRole('listitem')[0].querySelector('a')).toBeInTheDocument());
         // image
         waitFor(() => expect(screen.getAllByRole('listitem')[0].querySelector('img')).toBeInTheDocument());
         // name

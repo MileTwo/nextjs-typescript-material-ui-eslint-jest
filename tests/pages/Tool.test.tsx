@@ -32,7 +32,7 @@ describe('Tool Page', () => {
         });
 
         // go home button
-        waitFor(() => expect(screen.getByRole('button', { name: 'Link to Home' })).toBeInTheDocument());
+        waitFor(() => expect(screen.getByRole('link', { name: 'Link to Home' })).toBeInTheDocument());
         // header
         waitFor(() => expect(screen.getByRole('heading', { name: 'Apollo Client React' })).toBeInTheDocument());
         // image
