@@ -67,4 +67,11 @@ export const tools: Omit<Tool, 'id'>[] = [
         link: 'https://prettier.io/',
         image: '/prettier.png',
     },
+    {
+        name: 'Deque Axe',
+        description:
+            'Test your React application with the axe-core accessibility testing library. Results will show in the Chrome DevTools console.',
+        link: 'https://github.com/dequelabs/axe-core-npm/blob/develop/packages/react/README.md',
+        image: '/axe.svg',
+    },
 ];

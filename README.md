@@ -28,6 +28,7 @@ Includes TypeScript, Material UI, ESLint, Jest, and React Testing Library
   - [test](#test)
   - [type-check](#type-check)
   - [quality](#quality)
+-   [Accessibility ](#accessibility)
 
 ## App startup
 
@@ -35,10 +36,10 @@ Choose how to start your development server based on your database configuration
 
 ### SQLite
 
-Start up your development server with the following command:
+First time starting your app make sure to run `prisma` then start your app.
 
 ```
-npm run dev
+npm run prisma && npm run dev
 ```
 
 ### Postgres
@@ -236,3 +237,9 @@ Runs `type-check`, `lint`, and `test` to make an better developer experience cat
 ```bash
 npm run quality
 ```
+
+## Accessibility
+
+### @axe-core/react
+
+Runs in development environment and logs accessibility error results in dev tools console. Tool implementation is in `pages/_app.tsx`.
