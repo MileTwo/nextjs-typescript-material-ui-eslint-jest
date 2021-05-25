@@ -29,10 +29,11 @@
         "prisma": "prisma format && npm run migrate && npm run seed"
     },
     "devDependencies": {
-        "@babel/core": "^7.14.3",
-        "@babel/node": "^7.14.2",
-        "@babel/plugin-transform-typescript": "^7.14.3",
-        "@babel/preset-env": "^7.14.2",
+        "@axe-core/react": "^4.2.0",
+        "@babel/core": "^7.13.16",
+        "@babel/node": "^7.13.13",
+        "@babel/plugin-transform-typescript": "^7.13.0",
+        "@babel/preset-env": "^7.13.15",
         "@babel/preset-typescript": "^7.13.0",
         "@testing-library/dom": "^7.31.0",
         "@testing-library/jest-dom": "^5.12.0",

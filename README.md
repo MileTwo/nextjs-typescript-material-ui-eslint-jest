@@ -26,6 +26,7 @@ Includes TypeScript, Material UI, ESLint, Jest, and React Testing Library
     -   [test](#test)
     -   [type-check](#type-check)
     -   [quality](#quality)
+-   [Accessibility ](#accessibility)
 
 ## App startup
 
@@ -218,3 +219,9 @@ Runs `type-check`, `lint`, and `test` to make an better developer experience cat
 ```bash
 npm run quality
 ```
+
+## Accessibility
+
+### @axe-core/react
+
+Runs in development environment and logs accessibility error results in dev tools console. Tool implementation is in `pages/_app.tsx`.

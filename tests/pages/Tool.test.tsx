@@ -8,7 +8,7 @@ describe('Tool Page', () => {
         render(<Tool tool={{ ...tools[0], id: 0 }} />);
 
         // go home button
-        expect(screen.getByRole('button', { name: 'Link to Home' })).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument();
         // header
         expect(screen.getByRole('heading', { name: tools[0].name })).toBeInTheDocument();
         // image
@@ -16,7 +16,7 @@ describe('Tool Page', () => {
         // description
         expect(screen.getByText(tools[0].description));
         // link to docs
-        expect(screen.getByText('Visit documentation')).toBeInTheDocument();
+        expect(screen.getByText(`Visit ${tools[0].name} documentation`)).toBeInTheDocument();
     });
     it('getStaticPath', async () => {
         const paths = await getStaticPaths();
