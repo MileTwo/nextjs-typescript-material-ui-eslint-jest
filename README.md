@@ -2,30 +2,30 @@
 
 Includes TypeScript, Material UI, ESLint, Jest, and React Testing Library
 
-- [App startup](#app-startup)
-  - [SQLite](#sqlite)
-  - [Postgres](#postgres)
-- [Using Prisma](#using-prisma)
-  - [Adding a table to your database](#adding-a-table-to-your-database)
-  - [Creating migrations](#creating-migrations)
-  - [Seeding sample data](#seeding-sample-data)
-  - [Using prisma client to perform database actions](#using-prisma-client-to-perform-database-actions)
-- [Scripts](#scripts)
-  - [generate](#generate)
-  - [migrate](#migrate)
-  - [deploy](#deploy)
-  - [reset](#reset)
-  - [seed](#seed)
-  - [studio](#studio)
-  - [prisma](#prisma)
-  - [build](#build)
-  - [dev](#dev)
-  - [format](#format)
-  - [lint](#lint)
-  - [start](#start)
-  - [test](#test)
-  - [type-check](#type-check)
-  - [quality](#quality)
+-   [App startup](#app-startup)
+    -   [SQLite](#sqlite)
+    -   [Postgres](#postgres)
+-   [Using Prisma](#using-prisma)
+    -   [Adding a table to your database](#adding-a-table-to-your-database)
+    -   [Creating migrations](#creating-migrations)
+    -   [Seeding sample data](#seeding-sample-data)
+    -   [Using prisma client to perform database actions](#using-prisma-client-to-perform-database-actions)
+-   [Scripts](#scripts)
+    -   [generate](#generate)
+    -   [migrate](#migrate)
+    -   [deploy](#deploy)
+    -   [reset](#reset)
+    -   [seed](#seed)
+    -   [studio](#studio)
+    -   [prisma](#prisma)
+    -   [build](#build)
+    -   [dev](#dev)
+    -   [format](#format)
+    -   [lint](#lint)
+    -   [start](#start)
+    -   [test](#test)
+    -   [type-check](#type-check)
+    -   [quality](#quality)
 
 ## App startup
 
@@ -33,10 +33,10 @@ Choose how to start your development server based on your database configuration
 
 ### SQLite
 
-Start up your development server with the following command:
+First time starting your app make sure to run `prisma` then start your app.
 
 ```
-npm run dev
+npm run prisma && npm run dev
 ```
 
 ### Postgres
