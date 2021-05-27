@@ -57,7 +57,7 @@ export default function ToolInfo({ tool }: Props): ReactElement {
                             <Typography color="textPrimary">{tool.name}</Typography>
                         </Breadcrumbs>
                     </Grid>
-                    <Grid item xs={12} container>
+                    <Grid item xs={12} container justify="center" alignItems="center">
                         {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
                         {tool.image && <Image {...tool.image} data-testid="image" aria-hidden="true" />}
                         <Typography variant="h2" className={classes.title}>
