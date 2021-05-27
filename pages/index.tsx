@@ -61,7 +61,7 @@ export default function Home() {
                             <ToolDialog open={dialogOpen} onClose={() => setDialogOpen(false)} />
                         </Grid>
                         <Grid item container justify="center">
-                            <List aria-label={data?.tools.join(', ')} className={classes.list}>
+                            <List aria-label={data?.tools.map((tool) => tool.name).join(', ')} className={classes.list}>
                                 {data?.tools.map(({ name, image, id }) => {
                                     const link: LinkProps = {
                                         href: '/tool/[id]',
