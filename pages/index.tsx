@@ -9,7 +9,6 @@ import restEndpoints from '../lib/restEndpoints';
 import { fetcher } from '../lib/fetcher';
 import { useState } from 'react';
 import ToolDialog from '../components/dialog/ToolDialog';
-import Image from '../components/Image';
 import ListItem, { Link } from '../components/list/ListItem';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -26,9 +25,6 @@ const useStyles = makeStyles((theme: Theme) =>
         },
     })
 );
-
-export type Image = { src: string; width: number; height: number };
-
 interface Props {
     tools: Tool[];
 }
