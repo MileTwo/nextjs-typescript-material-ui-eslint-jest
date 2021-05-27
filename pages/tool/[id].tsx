@@ -15,7 +15,6 @@ import prisma from '../../prisma/prisma';
 const useStyles = makeStyles((theme: Theme) => ({
     description: {
         maxWidth: '80ch',
-        paddingLeft: 100,
     },
     root: {
         padding: '.5em 2em',
@@ -72,18 +71,18 @@ export default function ToolInfo({ tool }: Props): ReactElement {
                             <Typography color="textPrimary">{data.name}</Typography>
                         </Breadcrumbs>
                     </Grid>
-                    <Grid item xs={12} container>
+                    <Grid item xs={12} container justify="center" alignItems="center">
                         {data.image && <Image image={data.image} name={data.name} aria-hidden="true" />}
                         <Typography variant="h2" className={classes.title}>
                             {data.name}
                         </Typography>
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} container justify="center">
                         <Typography variant="body1" className={classes.description}>
                             {data.description}
                         </Typography>
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} container justify="center">
                         <Button variant="contained" href={tool.link} color="primary">
                             Visit {tool.name} documentation
                         </Button>
