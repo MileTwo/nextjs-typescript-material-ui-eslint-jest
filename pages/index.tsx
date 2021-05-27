@@ -1,17 +1,18 @@
 import { GetServerSideProps } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
-import { makeStyles, createStyles, Typography, Theme, Paper, ListItem, List, Grid, Button } from '@material-ui/core';
+import { makeStyles, createStyles, Typography, Theme, Paper, List, Grid } from '@material-ui/core';
 import Layout from '../components/layout';
+import ListItem, { Link } from '../components/list/ListItem';
 
 import { tools } from '../lib/tools';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        paper: {
-            background: theme.palette.gray.light,
-            boxShadow: `0 0.125em 0.25em 0 ${theme.palette.shadow.main}, 0 0.1875em 0.625em 0 ${theme.palette.shadow.main}`,
-            padding: '2em',
+        list: {
+            minWidth: theme.breakpoints.values.sm,
+            [theme.breakpoints.down('xs')]: {
+                width: '100%',
+                minWidth: 100,
+            },
         },
         root: {
             padding: '2em',
@@ -22,8 +23,9 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
+export type Image = { src: string; width: number; height: number };
 interface Props {
-    tools: { name: string; image?: { src: string; width: number; height: number } }[];
+    tools: { name: string; image?: Image }[];
 }
 
 export default function Home({ tools }: Props) {
@@ -39,32 +41,17 @@ export default function Home({ tools }: Props) {
                                 Tools
                             </Typography>
                         </Grid>
-                        <Grid item>
-                            <Paper className={classes.paper}>
-                                <List aria-label={tools.join(', ')}>
-                                    {tools.map(({ name, image }) => (
-                                        <ListItem key={name}>
-                                            <Grid container alignItems="center" justify="space-between">
-                                                {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
-                                                {image && <Image {...image} aria-hidden="true" />}
-                                                <Typography variant="body1" aria-hidden="true">
-                                                    {name}
-                                                </Typography>
-                                                <Link href="/tool/[name]" as={`/tool/${name}`} passHref>
-                                                    <Button
-                                                        variant="contained"
-                                                        color="primary"
-                                                        className={classes.linkButton}
-                                                        aria-label={`Learn more about ${name}`}
-                                                    >
-                                                        <span aria-hidden="true">Learn more</span>
-                                                    </Button>
-                                                </Link>
-                                            </Grid>
-                                        </ListItem>
-                                    ))}
-                                </List>
-                            </Paper>
+                        <Grid item container justify="center">
+                            <List aria-label={tools.join(', ')} className={classes.list}>
+                                {tools.map(({ name, image }) => {
+                                    const link: Link = {
+                                        href: '/tool/[name]',
+                                        as: `/tool/${name}`,
+                                        label: 'Learn More',
+                                    };
+                                    return <ListItem key={name} name={name} image={image} link={link} />;
+                                })}
+                            </List>
                         </Grid>
                     </Grid>
                 </Grid>

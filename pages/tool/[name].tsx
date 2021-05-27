@@ -10,7 +10,6 @@ import Layout from '../../components/layout';
 const useStyles = makeStyles((theme: Theme) => ({
     description: {
         maxWidth: '80ch',
-        paddingLeft: 100,
     },
     root: {
         padding: '.5em 2em',
@@ -65,12 +64,12 @@ export default function ToolInfo({ tool }: Props): ReactElement {
                             {tool.name}
                         </Typography>
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} container justify="center">
                         <Typography variant="body1" className={classes.description}>
                             {tool.description}
                         </Typography>
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} container justify="center">
                         <Button variant="contained" href={tool.link} color="primary">
                             Visit {tool.name} documentation
                         </Button>
