@@ -42,7 +42,7 @@ export default function ListItem({ name, image, link }: Props) {
     const classes = useStyles();
     return (
         <MUIListItem divider>
-            <Grid container>
+            <Grid container alignItems="center">
                 <ListItemAvatar>
                     <Avatar alt={name} className={classes.avatar}>
                         {/* NextJS Image optimization example. Props are src(any file under the public dir), width, and height */}
@@ -52,16 +52,9 @@ export default function ListItem({ name, image, link }: Props) {
                 <ListItemText>
                     <Typography variant="body1">{name}</Typography>
                 </ListItemText>
-                <Hidden smDown>
-                    <ListItemSecondaryAction className={classes.info}>
-                        <Link href={link.href} as={link?.as} label={link.label} />
-                    </ListItemSecondaryAction>
-                </Hidden>
-                <Hidden mdUp>
-                    <Grid container item xs={12} className={classes.info} justify="flex-end">
-                        <Link href={link.href} as={link?.as} label={link.label} />
-                    </Grid>
-                </Hidden>
+                <Grid container item xs={12} md={3} className={classes.info} justify="flex-end" alignItems="center">
+                    <Link href={link.href} as={link?.as} label={link.label} />
+                </Grid>
             </Grid>
         </MUIListItem>
     );
