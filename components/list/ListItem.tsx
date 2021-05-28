@@ -5,8 +5,6 @@ import {
     Avatar,
     ListItemText,
     Grid,
-    Hidden,
-    ListItemSecondaryAction,
     Typography,
     makeStyles,
     createStyles,
