@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import { makeStyles, createStyles, Typography, Theme, Paper, List, Grid } from '@material-ui/core';
+import { makeStyles, createStyles, Typography, Theme, List, Grid } from '@material-ui/core';
 import Layout from '../components/layout';
 import ListItem, { Link } from '../components/list/ListItem';
 
