@@ -34,6 +34,12 @@ Choose how to start your development server based on your database configuration
 
 ### SQLite
 
+Ensure you have a `.env` file with a `DATABASE_URL` variable set to file
+
+```bash
+DATABASE_URL="file:./dev.db"
+```
+
 First time starting your app make sure to run `prisma` then start your app.
 
 ```
@@ -42,16 +48,18 @@ npm run prisma && npm run dev
 
 ### Postgres
 
-Start up your development server with the following command:
+If you're coming from running ` npx create-m2-app` you should have a `docker-compose.yml`, and a `Dockerfile.dev` that will help you get your db up and running quickly.
+
+Start up your postgres db:
 
 ```
 docker-compose up
 ```
 
-Once your development server is up and running, in a new terminal run the following command:
+Then run prisma and start your development server
 
 ```
- npm run prisma
+ npm run prisma && npm run dev
 ```
 
 `npm run prisma` will do a few things for us:
