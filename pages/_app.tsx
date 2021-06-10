@@ -15,7 +15,6 @@ export const client = new ApolloClient({
 const isServerSideRendered = () => {
     return typeof window === 'undefined';
 };
-
 /**
  * Accessibility tool - outputs to devtools console on dev only and client-side only.
  * @see https://github.com/dequelabs/axe-core-npm
