@@ -4,7 +4,8 @@ import { gql } from '@apollo/client';
 import Layout from '../components/layout';
 import ToolDialog from '../components/dialog/ToolDialog';
 import { useToolsQuery } from '../gen/graphql-types';
-import ListItem, { LinkProps } from '../components/list/LIstItem';
+import ListItem from '../components/list/ListItem';
+import { LinkProps } from '../components/link/Link';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
