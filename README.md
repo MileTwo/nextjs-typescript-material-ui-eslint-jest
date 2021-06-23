@@ -2,32 +2,32 @@
 
 Includes TypeScript, Material UI, ESLint, Jest, and React Testing Library
 
-- [App startup](#app-startup)
-  - [SQLite](#sqlite)
-  - [Postgres](#postgres)
-- [Using Prisma](#using-prisma)
-  - [Adding a table to your database](#adding-a-table-to-your-database)
-  - [Creating migrations](#creating-migrations)
-  - [Seeding sample data](#seeding-sample-data)
-  - [Using prisma client to perform database actions](#using-prisma-client-to-perform-database-actions)
-- [Scripts](#scripts)
-  - [generate-types](#generate-types)
-  - [watch-queries](#watch-queries)
-  - [generate](#generate)
-  - [migrate](#migrate)
-  - [deploy](#deploy)
-  - [reset](#reset)
-  - [seed](#seed)
-  - [studio](#studio)
-  - [prisma](#prisma)
-  - [build](#build)
-  - [dev](#dev)
-  - [format](#format)
-  - [lint](#lint)
-  - [start](#start)
-  - [test](#test)
-  - [type-check](#type-check)
-  - [quality](#quality)
+-   [App startup](#app-startup)
+    -   [SQLite](#sqlite)
+    -   [Postgres](#postgres)
+-   [Using Prisma](#using-prisma)
+    -   [Adding a table to your database](#adding-a-table-to-your-database)
+    -   [Creating migrations](#creating-migrations)
+    -   [Seeding sample data](#seeding-sample-data)
+    -   [Using prisma client to perform database actions](#using-prisma-client-to-perform-database-actions)
+-   [Scripts](#scripts)
+    -   [generate-types](#generate-types)
+    -   [watch-queries](#watch-queries)
+    -   [generate](#generate)
+    -   [migrate](#migrate)
+    -   [deploy](#deploy)
+    -   [reset](#reset)
+    -   [seed](#seed)
+    -   [studio](#studio)
+    -   [prisma](#prisma)
+    -   [build](#build)
+    -   [dev](#dev)
+    -   [format](#format)
+    -   [lint](#lint)
+    -   [start](#start)
+    -   [test](#test)
+    -   [type-check](#type-check)
+    -   [quality](#quality)
 -   [Accessibility ](#accessibility)
 
 ## App startup
@@ -53,7 +53,7 @@ docker-compose up
 Once your development server is up and running, in a new terminal run the following command:
 
 ```
- npm run prisma
+ npm run prisma && npm run dev
 ```
 
 `npm run prisma` will do a few things for us:
