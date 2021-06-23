@@ -1,4 +1,4 @@
-import { Button, Grid, makeStyles, Theme, Typography } from '@material-ui/core';
+import { Button, Grid, makeStyles, Theme, Link as MUILink, Typography } from '@material-ui/core';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 import { useRouter } from 'next/router';
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     title: {
         paddingLeft: '1em',
-        color: theme.palette.secondary.dark,
+        color: theme.palette.primary[theme.palette.type],
     },
 }));
 
@@ -48,11 +48,9 @@ export default function ToolInfo(): ReactElement {
         return (
             <Grid container spacing={4} className={classes.root}>
                 <Grid item xs={12}>
-                    <Breadcrumbs aria-label="breadcrumb">
-                        <Link href="/" passHref>
-                            Home
-                        </Link>
-                    </Breadcrumbs>
+                    <Link href="/" passHref>
+                        <Breadcrumbs aria-label="breadcrumb">Home</Breadcrumbs>
+                    </Link>
                 </Grid>
                 <Grid item xs={12} container>
                     <Typography variant="h3">Tool not found.</Typography>
@@ -68,7 +66,7 @@ export default function ToolInfo(): ReactElement {
                     <Grid item xs={12}>
                         <Breadcrumbs aria-label="breadcrumb">
                             <Link href="/" passHref>
-                                Home
+                                <MUILink>Home</MUILink>
                             </Link>
                             <Typography color="textPrimary">{data?.tool?.name}</Typography>
                         </Breadcrumbs>
