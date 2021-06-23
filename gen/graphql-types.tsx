@@ -21,11 +21,11 @@ export type AffectedRowsOutput = {
 
 export type AggregateTool = {
   __typename?: 'AggregateTool';
-  count?: Maybe<ToolCountAggregate>;
-  avg?: Maybe<ToolAvgAggregate>;
-  sum?: Maybe<ToolSumAggregate>;
-  min?: Maybe<ToolMinAggregate>;
-  max?: Maybe<ToolMaxAggregate>;
+  _count?: Maybe<ToolCountAggregate>;
+  _avg?: Maybe<ToolAvgAggregate>;
+  _sum?: Maybe<ToolSumAggregate>;
+  _min?: Maybe<ToolMinAggregate>;
+  _max?: Maybe<ToolMaxAggregate>;
 };
 
 export type IntFilter = {
@@ -48,11 +48,11 @@ export type IntWithAggregatesFilter = {
   gt?: Maybe<Scalars['Int']>;
   gte?: Maybe<Scalars['Int']>;
   not?: Maybe<NestedIntWithAggregatesFilter>;
-  count?: Maybe<NestedIntFilter>;
-  avg?: Maybe<NestedFloatFilter>;
-  sum?: Maybe<NestedIntFilter>;
-  min?: Maybe<NestedIntFilter>;
-  max?: Maybe<NestedIntFilter>;
+  _count?: Maybe<NestedIntFilter>;
+  _avg?: Maybe<NestedFloatFilter>;
+  _sum?: Maybe<NestedIntFilter>;
+  _min?: Maybe<NestedIntFilter>;
+  _max?: Maybe<NestedIntFilter>;
 };
 
 export type Mutation = {
@@ -141,11 +141,11 @@ export type NestedIntWithAggregatesFilter = {
   gt?: Maybe<Scalars['Int']>;
   gte?: Maybe<Scalars['Int']>;
   not?: Maybe<NestedIntWithAggregatesFilter>;
-  count?: Maybe<NestedIntFilter>;
-  avg?: Maybe<NestedFloatFilter>;
-  sum?: Maybe<NestedIntFilter>;
-  min?: Maybe<NestedIntFilter>;
-  max?: Maybe<NestedIntFilter>;
+  _count?: Maybe<NestedIntFilter>;
+  _avg?: Maybe<NestedFloatFilter>;
+  _sum?: Maybe<NestedIntFilter>;
+  _min?: Maybe<NestedIntFilter>;
+  _max?: Maybe<NestedIntFilter>;
 };
 
 export type NestedStringFilter = {
@@ -188,9 +188,9 @@ export type NestedStringNullableWithAggregatesFilter = {
   startsWith?: Maybe<Scalars['String']>;
   endsWith?: Maybe<Scalars['String']>;
   not?: Maybe<NestedStringNullableWithAggregatesFilter>;
-  count?: Maybe<NestedIntNullableFilter>;
-  min?: Maybe<NestedStringNullableFilter>;
-  max?: Maybe<NestedStringNullableFilter>;
+  _count?: Maybe<NestedIntNullableFilter>;
+  _min?: Maybe<NestedStringNullableFilter>;
+  _max?: Maybe<NestedStringNullableFilter>;
 };
 
 export type NestedStringWithAggregatesFilter = {
@@ -205,9 +205,9 @@ export type NestedStringWithAggregatesFilter = {
   startsWith?: Maybe<Scalars['String']>;
   endsWith?: Maybe<Scalars['String']>;
   not?: Maybe<NestedStringWithAggregatesFilter>;
-  count?: Maybe<NestedIntFilter>;
-  min?: Maybe<NestedStringFilter>;
-  max?: Maybe<NestedStringFilter>;
+  _count?: Maybe<NestedIntFilter>;
+  _min?: Maybe<NestedStringFilter>;
+  _max?: Maybe<NestedStringFilter>;
 };
 
 export type NullableStringFieldUpdateOperationsInput = {
@@ -316,9 +316,9 @@ export type StringNullableWithAggregatesFilter = {
   startsWith?: Maybe<Scalars['String']>;
   endsWith?: Maybe<Scalars['String']>;
   not?: Maybe<NestedStringNullableWithAggregatesFilter>;
-  count?: Maybe<NestedIntNullableFilter>;
-  min?: Maybe<NestedStringNullableFilter>;
-  max?: Maybe<NestedStringNullableFilter>;
+  _count?: Maybe<NestedIntNullableFilter>;
+  _min?: Maybe<NestedStringNullableFilter>;
+  _max?: Maybe<NestedStringNullableFilter>;
 };
 
 export type StringWithAggregatesFilter = {
@@ -333,9 +333,9 @@ export type StringWithAggregatesFilter = {
   startsWith?: Maybe<Scalars['String']>;
   endsWith?: Maybe<Scalars['String']>;
   not?: Maybe<NestedStringWithAggregatesFilter>;
-  count?: Maybe<NestedIntFilter>;
-  min?: Maybe<NestedStringFilter>;
-  max?: Maybe<NestedStringFilter>;
+  _count?: Maybe<NestedIntFilter>;
+  _min?: Maybe<NestedStringFilter>;
+  _max?: Maybe<NestedStringFilter>;
 };
 
 export type Tool = {
@@ -376,11 +376,11 @@ export type ToolGroupBy = {
   description: Scalars['String'];
   link: Scalars['String'];
   image?: Maybe<Scalars['String']>;
-  count?: Maybe<ToolCountAggregate>;
-  avg?: Maybe<ToolAvgAggregate>;
-  sum?: Maybe<ToolSumAggregate>;
-  min?: Maybe<ToolMinAggregate>;
-  max?: Maybe<ToolMaxAggregate>;
+  _count?: Maybe<ToolCountAggregate>;
+  _avg?: Maybe<ToolAvgAggregate>;
+  _sum?: Maybe<ToolSumAggregate>;
+  _min?: Maybe<ToolMinAggregate>;
+  _max?: Maybe<ToolMaxAggregate>;
 };
 
 export type ToolMaxAggregate = {

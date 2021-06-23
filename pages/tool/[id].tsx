@@ -87,7 +87,13 @@ export default function ToolInfo(): ReactElement {
                         </Typography>
                     </Grid>
                     <Grid item xs={12} container justify="center">
-                        <Button variant="contained" href={data?.tool?.link} color="primary">
+                        <Button
+                            variant="contained"
+                            href={data?.tool?.link}
+                            color="primary"
+                            target="_blank"
+                            component="a"
+                        >
                             Visit {data?.tool?.name} documentation
                         </Button>
                     </Grid>
