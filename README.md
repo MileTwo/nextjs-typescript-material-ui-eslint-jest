@@ -44,6 +44,12 @@ npm run prisma && npm run dev
 
 ### Postgres
 
+Ensure you have a `.env` file with a `DATABASE_URL` variable following the [format required by prisma](https://www.prisma.io/docs/concepts/database-connectors/postgresql#connection-details) and using the credentials found in your `docker-compose.yml` file.
+
+```
+DATABASE_URL=postgresql://[POSTGRES_USER]:[POSTGRES_PASSWORD]@[POSTGRES_HOST]:[PORT]?schema=public
+```
+
 Start up your development server with the following command:
 
 ```
