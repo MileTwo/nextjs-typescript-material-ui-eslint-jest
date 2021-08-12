@@ -9,7 +9,7 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Image from '../../components/Image';
 import restEndpoints from '../../lib/restEndpoints';
 import { fetcher } from '../../lib/fetcher';
-import prisma, { Tool } from '../../prisma/prisma';
+import prisma, { Tool } from '../../services/prisma';
 
 const useStyles = makeStyles((theme: Theme) => ({
     description: {

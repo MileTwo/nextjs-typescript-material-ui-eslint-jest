@@ -1,19 +1,5 @@
-import { createMuiTheme, responsiveFontSizes, ThemeOptions } from '@material-ui/core/styles';
-
+import { createTheme, responsiveFontSizes, ThemeOptions } from '@material-ui/core/styles';
 import '@material-ui/core/styles';
-
-declare module '@material-ui/core/styles/createPalette' {
-    interface Palette {
-        priority: Palette['primary'];
-        gray: Palette['primary'];
-        shadow: Palette['primary'];
-    }
-    interface PaletteOptions {
-        priority: PaletteOptions['primary'];
-        gray: PaletteOptions['primary'];
-        shadow: PaletteOptions['primary'];
-    }
-}
 
 declare module '@material-ui/core/styles/createTypography' {
     interface Typography {
@@ -66,34 +52,16 @@ const THEME: ThemeOptions = {
         },
     },
     palette: {
-        primary: {
-            light: '#d0df63',
-            main: '#016848',
-            dark: '#003b21',
-        },
-        secondary: {
-            light: '#577984',
-            main: '#1a3a44',
-            dark: '#00151d',
-            contrastText: '#d8ddea',
-        },
-        priority: {
-            light: '#2f78c5',
-            main: '#d35400',
-            dark: '#8b0000',
-        },
-        gray: {
-            light: '#EEEEEE',
-            main: '#888888',
-            dark: '#212121',
-            contrastText: '#5a5a5a',
-        },
-        shadow: {
-            main: 'rgba(1, 104, 72, 0.16)',
-        },
+        primary: { main: '#016848', dark: '#1f5849', light: '#388e3c' },
+        secondary: { main: '#8bc34a', dark: '#689f38', light: '#d0df63' },
+        contrastThreshold: 3,
+        tonalOffset: 0.5,
+    },
+    shape: {
+        borderRadius: 4,
     },
 };
 
-const theme = responsiveFontSizes(createMuiTheme(THEME));
+const theme = responsiveFontSizes(createTheme(THEME));
 
 export default theme;

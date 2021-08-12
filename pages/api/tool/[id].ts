@@ -1,6 +1,6 @@
 // https://nextjs.org/docs/api-routes/introduction
 import { NextApiRequest, NextApiResponse } from 'next';
-import prisma from '../../../prisma/prisma';
+import prisma from '../../../services/prisma';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const { method, query } = req;

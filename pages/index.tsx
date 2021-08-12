@@ -3,7 +3,7 @@ import { makeStyles, createStyles, Typography, Theme, List, Grid, Button } from 
 import useSWR from 'swr';
 import Layout from '../components/layout';
 
-import prisma, { Tool } from '../prisma/prisma';
+import prisma, { Tool } from '../services/prisma';
 import restEndpoints from '../lib/restEndpoints';
 import { fetcher } from '../lib/fetcher';
 import { useState } from 'react';
