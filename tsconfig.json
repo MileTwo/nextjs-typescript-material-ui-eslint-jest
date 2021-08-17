@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "experimentalDecorators": true,
         "allowJs": true,
         "alwaysStrict": true,
         "esModuleInterop": true,
@@ -8,6 +9,8 @@
         "jsx": "preserve",
         "lib": ["dom", "ESNext"],
         "module": "commonjs",
+        "outDir": "dist",
+        "sourceMap": true,
         "moduleResolution": "node",
         "noEmit": true,
         "noFallthroughCasesInSwitch": true,
@@ -16,10 +19,8 @@
         "resolveJsonModule": true,
         "skipLibCheck": true,
         "strict": true,
-        "target": "esnext",
-        "sourceMap": true,
-        "outDir": "dist"
+        "target": "esnext"
     },
     "exclude": ["node_modules"],
-    "include": ["**/*.ts", "**/*.tsx"]
+    "include": ["**/*.ts", "**/*.tsx", "setupTests.ts"]
 }

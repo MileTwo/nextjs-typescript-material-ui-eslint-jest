@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     title: {
         paddingLeft: '1em',
-        color: theme.palette.secondary.dark,
+        color: theme.palette.text.secondary,
     },
 }));
 
@@ -70,19 +70,19 @@ export default function ToolInfo({ tool }: Props): ReactElement {
                             <Typography color="textPrimary">{data.name}</Typography>
                         </Breadcrumbs>
                     </Grid>
-                    <Grid item xs={12} container justify="center" alignItems="center">
+                    <Grid item xs={12} container justifyContent="center" alignItems="center">
                         {data.image && <Image image={data.image} name={data.name} aria-hidden="true" />}
                         <Typography variant="h2" className={classes.title}>
                             {data.name}
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} container justify="center">
+                    <Grid item xs={12} container justifyContent="center">
                         <Typography variant="body1" className={classes.description}>
                             {data.description}
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} container justify="center">
-                        <Button variant="contained" href={tool.link} color="primary">
+                    <Grid item xs={12} container justifyContent="center">
+                        <Button variant="contained" href={tool.link} target="_blank" color="primary">
                             Visit {tool.name} documentation
                         </Button>
                     </Grid>
