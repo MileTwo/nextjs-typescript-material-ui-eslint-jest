@@ -36,12 +36,12 @@ export default function Home({ tools }: Props) {
             <Layout title="Next.js example">
                 <Grid container spacing={4} direction="column" className={classes.root}>
                     <Grid item container spacing={4} direction="column" xs={12} alignItems="center">
-                        <Grid container item alignContent="center" justify="center">
+                        <Grid container item alignContent="center" justifyContent="center">
                             <Typography variant="h5" component="h2">
                                 Tools
                             </Typography>
                         </Grid>
-                        <Grid item container justify="center">
+                        <Grid item container justifyContent="center">
                             <List aria-label={tools.join(', ')} className={classes.list}>
                                 {tools.map(({ name, image }) => {
                                     const link: Link = {

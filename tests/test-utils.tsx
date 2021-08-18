@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { render } from '@testing-library/react';
-import { RouterContext } from 'next/dist/next-server/lib/router-context';
+import { RouterContext } from 'next/dist/shared/lib/router-context';
 import { NextRouter } from 'next/router';
 import { ThemeProvider } from '@material-ui/core';
 import theme from '../lib/theme';
