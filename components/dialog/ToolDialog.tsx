@@ -51,7 +51,7 @@ export default function ToolDialog({ open, onClose }: Props): ReactElement {
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <DialogContent>
-                    <Grid container alignItems="center" justify="center" direction="column">
+                    <Grid container alignItems="center" justifyContent="center" direction="column">
                         <Grid item xs={12} style={{ margin: '0 0 1em 0' }}>
                             <Controller
                                 name="name"

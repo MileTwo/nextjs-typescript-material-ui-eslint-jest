@@ -52,7 +52,15 @@ export default function ListItem({ name, image, link }: Props) {
                 <ListItemText>
                     <Typography variant="body1">{name}</Typography>
                 </ListItemText>
-                <Grid container item xs={12} md={3} className={classes.info} justify="flex-end" alignItems="center">
+                <Grid
+                    container
+                    item
+                    xs={12}
+                    md={3}
+                    className={classes.info}
+                    justifyContent="flex-end"
+                    alignItems="center"
+                >
                     <Link href={link.href} as={link?.as} label={link.label} />
                 </Grid>
             </Grid>
