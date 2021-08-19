@@ -1,5 +1,5 @@
 import { Button, Grid, makeStyles, Theme, Typography } from '@material-ui/core';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 import useSWR from 'swr';
@@ -92,17 +92,7 @@ export default function ToolInfo({ tool }: Props): ReactElement {
     );
 }
 
-// https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation
-export async function getStaticPaths() {
-    const tools = await prisma().tool.findMany();
-
-    return {
-        paths: tools.map((tool) => ({ params: { id: `${tool.id}` } })),
-        fallback: false,
-    };
-}
-
-export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<Props> = async ({ params }) => {
     if (params?.id) {
         const tool = await prisma().tool.findUnique({ where: { id: Number(params.id) } });
         if (tool) {
