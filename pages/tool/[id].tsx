@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     title: {
         paddingLeft: '1em',
-        color: theme.palette.primary[theme.palette.type],
+        color: theme.palette.text.secondary,
     },
 }));
 

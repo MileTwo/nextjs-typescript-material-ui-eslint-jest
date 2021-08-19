@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: theme.spacing(2),
         },
         avatar: {
-            backgroundColor: theme.palette.gray.light,
+            backgroundColor: theme.palette.grey[100],
         },
     })
 );
