@@ -6,7 +6,7 @@ import { resolvers } from '@generated/type-graphql';
 import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import prisma from '../../prisma/prisma';
+import prisma from '../../services/prisma';
 
 export interface GraphQLContext {
     prisma: PrismaClient;

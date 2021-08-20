@@ -12,7 +12,7 @@ import {
 
 import Image from '../Image';
 import Link from '../link/Link';
-import { Maybe } from '../../gen/graphql-types';
+import { Maybe } from '../../types/gen/graphql-types';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

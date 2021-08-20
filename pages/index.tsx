@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { gql } from '@apollo/client';
 import Layout from '../components/layout';
 import ToolDialog from '../components/dialog/ToolDialog';
-import { useToolsQuery } from '../gen/graphql-types';
+import { useToolsQuery } from '../types/gen/graphql-types';
 import ListItem from '../components/list/ListItem';
 import { LinkProps } from '../components/link/Link';
 

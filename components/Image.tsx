@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import NextImage from 'next/image';
 import { Avatar, createStyles, makeStyles, Theme } from '@material-ui/core';
 
-import { Maybe } from '../gen/graphql-types';
+import { Maybe } from '../types/gen/graphql-types';
 
 interface Props {
     image: Maybe<string> | undefined;

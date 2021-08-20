@@ -6,7 +6,7 @@ import Layout from '../../components/layout';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Image from '../../components/Image';
 import gql from 'graphql-tag';
-import { useToolQuery } from '../../gen/graphql-types';
+import { useToolQuery } from '../../types/gen/graphql-types';
 
 const useStyles = makeStyles((theme: Theme) => ({
     description: {
