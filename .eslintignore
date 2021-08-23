@@ -2,3 +2,5 @@
 node_modules/
 charts/
 prisma/
+next-env.d.ts
+tests/

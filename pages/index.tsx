@@ -3,7 +3,7 @@ import { makeStyles, createStyles, Typography, Theme, List, Grid, Button } from 
 import useSWR from 'swr';
 import Layout from '../components/layout';
 
-import prisma, { Tool } from '../prisma/prisma';
+import prisma, { Tool } from '../services/prisma';
 import restEndpoints from '../lib/restEndpoints';
 import { fetcher } from '../lib/fetcher';
 import { useState } from 'react';
@@ -39,20 +39,27 @@ export default function Home({ tools }: Props) {
             <Layout title="Next.js example">
                 <Grid container spacing={4} direction="column" className={classes.root}>
                     <Grid item container spacing={4} direction="column">
-                        <Grid item container spacing={4} alignContent="center" justify="center" direction="column">
-                            <Grid item container justify="center">
+                        <Grid
+                            item
+                            container
+                            spacing={4}
+                            alignContent="center"
+                            justifyContent="center"
+                            direction="column"
+                        >
+                            <Grid item container justifyContent="center">
                                 <Typography variant="h5" component="h2">
                                     Tools
                                 </Typography>
                             </Grid>
-                            <Grid item container justify="center">
+                            <Grid item container justifyContent="center">
                                 <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}>
                                     Create
                                 </Button>
                             </Grid>
                             <ToolDialog open={dialogOpen} onClose={() => setDialogOpen(false)} />
                         </Grid>
-                        <Grid item container justify="center">
+                        <Grid item container justifyContent="center">
                             <List aria-label={tools.join(', ')} className={classes.list}>
                                 {data?.map(({ name, image, id }) => {
                                     const link: Link = {

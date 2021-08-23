@@ -1,5 +1,5 @@
 import { Button, Grid, makeStyles, Theme, Typography } from '@material-ui/core';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 import useSWR from 'swr';
@@ -9,7 +9,7 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Image from '../../components/Image';
 import restEndpoints from '../../lib/restEndpoints';
 import { fetcher } from '../../lib/fetcher';
-import prisma, { Tool } from '../../prisma/prisma';
+import prisma, { Tool } from '../../services/prisma';
 
 const useStyles = makeStyles((theme: Theme) => ({
     description: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     title: {
         paddingLeft: '1em',
-        color: theme.palette.secondary.dark,
+        color: theme.palette.text.secondary,
     },
 }));
 
@@ -70,19 +70,19 @@ export default function ToolInfo({ tool }: Props): ReactElement {
                             <Typography color="textPrimary">{data.name}</Typography>
                         </Breadcrumbs>
                     </Grid>
-                    <Grid item xs={12} container justify="center" alignItems="center">
+                    <Grid item xs={12} container justifyContent="center" alignItems="center">
                         {data.image && <Image image={data.image} name={data.name} aria-hidden="true" />}
                         <Typography variant="h2" className={classes.title}>
                             {data.name}
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} container justify="center">
+                    <Grid item xs={12} container justifyContent="center">
                         <Typography variant="body1" className={classes.description}>
                             {data.description}
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} container justify="center">
-                        <Button variant="contained" href={tool.link} color="primary">
+                    <Grid item xs={12} container justifyContent="center">
+                        <Button variant="contained" href={tool.link} target="_blank" color="primary">
                             Visit {tool.name} documentation
                         </Button>
                     </Grid>
@@ -92,17 +92,7 @@ export default function ToolInfo({ tool }: Props): ReactElement {
     );
 }
 
-// https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation
-export async function getStaticPaths() {
-    const tools = await prisma().tool.findMany();
-
-    return {
-        paths: tools.map((tool) => ({ params: { id: `${tool.id}` } })),
-        fallback: false,
-    };
-}
-
-export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<Props> = async ({ params }) => {
     if (params?.id) {
         const tool = await prisma().tool.findUnique({ where: { id: Number(params.id) } });
         if (tool) {
