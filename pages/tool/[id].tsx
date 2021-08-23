@@ -40,6 +40,8 @@ export default function ToolInfo({ tool }: Props): ReactElement {
         initialData: tool,
     });
 
+    console.log({ data });
+
     if (!data) {
         return (
             <Grid container spacing={4} className={classes.root}>
