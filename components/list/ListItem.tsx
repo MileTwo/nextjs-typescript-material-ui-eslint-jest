@@ -12,7 +12,7 @@ import {
 
 import Image from '../Image';
 import Link from '../link/Link';
-import { Maybe } from '../../gen/graphql-types';
+import { Maybe } from '../../types/gen/graphql-types';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: theme.spacing(2),
         },
         avatar: {
-            backgroundColor: theme.palette.gray.light,
+            backgroundColor: theme.palette.grey[100],
         },
     })
 );
@@ -52,7 +52,15 @@ export default function ListItem({ name, image, link }: Props) {
                 <ListItemText>
                     <Typography variant="body1">{name}</Typography>
                 </ListItemText>
-                <Grid container item xs={12} md={3} className={classes.info} justify="flex-end" alignItems="center">
+                <Grid
+                    container
+                    item
+                    xs={12}
+                    md={3}
+                    className={classes.info}
+                    justifyContent="flex-end"
+                    alignItems="center"
+                >
                     <Link href={link.href} as={link?.as} label={link.label} />
                 </Grid>
             </Grid>

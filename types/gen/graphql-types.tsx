@@ -471,37 +471,19 @@ export type CreateToolMutationVariables = Exact<{
 }>;
 
 
-export type CreateToolMutation = (
-  { __typename?: 'Mutation' }
-  & { createTool: (
-    { __typename?: 'Tool' }
-    & Pick<Tool, 'id'>
-  ) }
-);
+export type CreateToolMutation = { __typename?: 'Mutation', createTool: { __typename?: 'Tool', id: number } };
 
 export type ToolsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ToolsQuery = (
-  { __typename?: 'Query' }
-  & { tools: Array<(
-    { __typename?: 'Tool' }
-    & Pick<Tool, 'id' | 'name' | 'description' | 'link' | 'image'>
-  )> }
-);
+export type ToolsQuery = { __typename?: 'Query', tools: Array<{ __typename?: 'Tool', id: number, name: string, description: string, link: string, image?: Maybe<string> }> };
 
 export type ToolQueryVariables = Exact<{
   id: Scalars['Int'];
 }>;
 
 
-export type ToolQuery = (
-  { __typename?: 'Query' }
-  & { tool?: Maybe<(
-    { __typename?: 'Tool' }
-    & Pick<Tool, 'id' | 'name' | 'description' | 'link' | 'image'>
-  )> }
-);
+export type ToolQuery = { __typename?: 'Query', tool?: Maybe<{ __typename?: 'Tool', id: number, name: string, description: string, link: string, image?: Maybe<string> }> };
 
 
 export const CreateToolDocument = gql`

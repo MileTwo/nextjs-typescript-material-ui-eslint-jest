@@ -3,7 +3,7 @@ import { Tool } from '@prisma/client';
 import gql from 'graphql-tag';
 import React, { ReactElement } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { useCreateToolMutation } from '../../gen/graphql-types';
+import { useCreateToolMutation } from '../../types/gen/graphql-types';
 import { QUERY_TOOLS } from '../../pages';
 
 interface Props {
@@ -51,7 +51,7 @@ export default function ToolDialog({ open, onClose }: Props): ReactElement {
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <DialogContent>
-                    <Grid container alignItems="center" justify="center" direction="column">
+                    <Grid container alignItems="center" justifyContent="center" direction="column">
                         <Grid item xs={12} style={{ margin: '0 0 1em 0' }}>
                             <Controller
                                 name="name"

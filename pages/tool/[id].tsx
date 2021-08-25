@@ -6,7 +6,7 @@ import Layout from '../../components/layout';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Image from '../../components/Image';
 import gql from 'graphql-tag';
-import { useToolQuery } from '../../gen/graphql-types';
+import { useToolQuery } from '../../types/gen/graphql-types';
 
 const useStyles = makeStyles((theme: Theme) => ({
     description: {
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     title: {
         paddingLeft: '1em',
-        color: theme.palette.primary[theme.palette.type],
+        color: theme.palette.text.secondary,
     },
 }));
 
@@ -71,7 +71,7 @@ export default function ToolInfo(): ReactElement {
                             <Typography color="textPrimary">{data?.tool?.name}</Typography>
                         </Breadcrumbs>
                     </Grid>
-                    <Grid item xs={12} container justify="center" alignItems="center">
+                    <Grid item xs={12} container justifyContent="center" alignItems="center">
                         {data?.tool?.image && (
                             <Image image={data?.tool?.image} name={data?.tool?.name} aria-hidden="true" />
                         )}
@@ -79,12 +79,12 @@ export default function ToolInfo(): ReactElement {
                             {data?.tool?.name}
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} container justify="center">
+                    <Grid item xs={12} container justifyContent="center">
                         <Typography variant="body1" className={classes.description}>
                             {data?.tool?.description}
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} container justify="center">
+                    <Grid item xs={12} container justifyContent="center">
                         <Button
                             variant="contained"
                             href={data?.tool?.link}

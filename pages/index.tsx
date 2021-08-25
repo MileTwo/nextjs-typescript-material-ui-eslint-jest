@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { gql } from '@apollo/client';
 import Layout from '../components/layout';
 import ToolDialog from '../components/dialog/ToolDialog';
-import { useToolsQuery } from '../gen/graphql-types';
+import { useToolsQuery } from '../types/gen/graphql-types';
 import ListItem from '../components/list/ListItem';
 import { LinkProps } from '../components/link/Link';
 
@@ -48,20 +48,27 @@ export default function Home() {
             <Layout title="Next.js example">
                 <Grid container spacing={4} direction="column" className={classes.root}>
                     <Grid item container spacing={4} direction="column">
-                        <Grid item container spacing={4} alignContent="center" justify="center" direction="column">
-                            <Grid item container justify="center">
+                        <Grid
+                            item
+                            container
+                            spacing={4}
+                            alignContent="center"
+                            justifyContent="center"
+                            direction="column"
+                        >
+                            <Grid item container justifyContent="center">
                                 <Typography variant="h5" component="h2">
                                     Tools
                                 </Typography>
                             </Grid>
-                            <Grid item container justify="center">
+                            <Grid item container justifyContent="center">
                                 <Button variant="contained" color="primary" onClick={() => setDialogOpen(true)}>
                                     Create
                                 </Button>
                             </Grid>
                             <ToolDialog open={dialogOpen} onClose={() => setDialogOpen(false)} />
                         </Grid>
-                        <Grid item container justify="center">
+                        <Grid item container justifyContent="center">
                             <List aria-label={data?.tools.map((tool) => tool.name).join(', ')} className={classes.list}>
                                 {data?.tools.map(({ name, image, id }) => {
                                     const link: LinkProps = {
