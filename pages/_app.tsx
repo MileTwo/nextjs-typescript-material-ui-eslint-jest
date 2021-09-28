@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
 import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import theme from 'lib/theme';
+import theme from '../lib/theme';
 import React, { useEffect } from 'react';
 
 declare module '@mui/styles/defaultTheme' {

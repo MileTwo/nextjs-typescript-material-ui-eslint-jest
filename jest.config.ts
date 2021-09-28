@@ -10,6 +10,10 @@ const config: Config.InitialOptions = {
         '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     },
     verbose: true,
+    moduleNameMapper: {
+        'src/(.*)': '<rootDir>/src/$1',
+        'tests/(.*)': '<rootDir>/tests/$1',
+    },
 };
 
 export default config;
