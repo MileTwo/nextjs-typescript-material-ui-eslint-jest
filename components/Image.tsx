@@ -1,6 +1,8 @@
 import React, { ReactElement } from 'react';
 import NextImage from 'next/image';
-import { Avatar, createStyles, makeStyles, Theme } from '@material-ui/core';
+import { Avatar, Theme } from '@mui/material';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import { Image as ImageType } from '../pages';
 
 interface Props {

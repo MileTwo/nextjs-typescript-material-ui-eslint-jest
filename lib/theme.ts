@@ -1,7 +1,6 @@
-import { createTheme, responsiveFontSizes, ThemeOptions } from '@material-ui/core/styles';
-import '@material-ui/core/styles';
+import { createTheme, responsiveFontSizes, DeprecatedThemeOptions } from '@mui/material/styles';
 
-declare module '@material-ui/core/styles/createTypography' {
+declare module '@mui/material/styles/createTypography' {
     interface Typography {
         fontWeightHeavy: number;
     }
@@ -10,7 +9,7 @@ declare module '@material-ui/core/styles/createTypography' {
     }
 }
 
-const THEME: ThemeOptions = {
+const THEME: DeprecatedThemeOptions = {
     typography: {
         fontFamily: ['Roboto', 'Helvetica', 'Arial', 'sans-serif'].join(','),
         fontWeightLight: 100,

@@ -4,8 +4,13 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 import { NextRouter } from 'next/router';
-import { ThemeProvider } from '@material-ui/core';
-import theme from '../lib/theme';
+import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material';
+import theme from 'lib/theme';
+
+declare module '@mui/styles/defaultTheme' {
+    // eslint-disable-next-line @typescript-eslint/no-empty-interface
+    interface DefaultTheme extends Theme {}
+}
 
 export * from '@testing-library/react';
 
@@ -49,9 +54,11 @@ const mockRouter: NextRouter = {
 // Where you add your providers for mock testing wrapper
 export function customRender(ui: RenderUI, { wrapper, router, ...options }: RenderOptions = {}) {
     wrapper = ({ children }) => (
-        <ThemeProvider theme={theme}>
-            <RouterContext.Provider value={{ ...mockRouter, ...router }}>{children}</RouterContext.Provider>
-        </ThemeProvider>
+        <StyledEngineProvider injectFirst>
+            <ThemeProvider theme={theme}>
+                <RouterContext.Provider value={{ ...mockRouter, ...router }}>{children}</RouterContext.Provider>
+            </ThemeProvider>
+        </StyledEngineProvider>
     );
 
     return render(ui, { wrapper, ...options });

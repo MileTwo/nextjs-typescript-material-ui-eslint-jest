@@ -1,5 +1,7 @@
 import { GetServerSideProps } from 'next';
-import { makeStyles, createStyles, Typography, Theme, List, Grid } from '@material-ui/core';
+import { Typography, Theme, List, Grid } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import createStyles from '@mui/styles/createStyles';
 import Layout from '../components/layout';
 import ListItem, { Link } from '../components/list/ListItem';
 
@@ -9,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         list: {
             minWidth: theme.breakpoints.values.sm,
-            [theme.breakpoints.down('xs')]: {
+            [theme.breakpoints.down('sm')]: {
                 width: '100%',
                 minWidth: 100,
             },

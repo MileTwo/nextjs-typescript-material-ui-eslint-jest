@@ -1,6 +1,6 @@
 // https://nextjs.org/docs/api-routes/introduction
 import { NextApiRequest, NextApiResponse } from 'next';
-import { tools } from '../../lib/tools';
+import { tools } from 'lib/tools';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const {

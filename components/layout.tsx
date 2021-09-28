@@ -1,4 +1,6 @@
-import { makeStyles, createStyles, Typography } from '@material-ui/core';
+import { Typography } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import createStyles from '@mui/styles/createStyles';
 import { ReactElement } from 'react';
 import Head from 'next/head';
 
