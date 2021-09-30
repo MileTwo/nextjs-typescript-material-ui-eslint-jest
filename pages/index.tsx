@@ -1,7 +1,6 @@
 import { GetServerSideProps } from 'next';
 import { Typography, Theme, List, Grid } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
-import createStyles from '@mui/styles/createStyles';
+import { createStyles, makeStyles } from '@mui/styles';
 import Layout from '../components/layout';
 import ListItem, { Link } from '../components/list/ListItem';
 

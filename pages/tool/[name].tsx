@@ -1,5 +1,5 @@
 import { Button, Grid, Theme, Typography } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from '@mui/styles';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';

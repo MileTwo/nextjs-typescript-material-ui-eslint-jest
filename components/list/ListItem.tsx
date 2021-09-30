@@ -1,7 +1,6 @@
 import Image from '../Image';
 import { ListItem as MUIListItem, ListItemAvatar, Avatar, ListItemText, Grid, Typography, Theme } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
-import createStyles from '@mui/styles/createStyles';
+import { createStyles, makeStyles } from '@mui/styles';
 import Link from '../link/Link';
 import { Image as ImageType } from '../../pages/index';
 
