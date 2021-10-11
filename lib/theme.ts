@@ -1,4 +1,4 @@
-import { createTheme, responsiveFontSizes, DeprecatedThemeOptions } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes, ThemeOptions } from '@mui/material/styles';
 
 declare module '@mui/material/styles/createTypography' {
     interface Typography {
@@ -9,7 +9,7 @@ declare module '@mui/material/styles/createTypography' {
     }
 }
 
-const THEME: DeprecatedThemeOptions = {
+const THEME: ThemeOptions = {
     typography: {
         fontFamily: ['Roboto', 'Helvetica', 'Arial', 'sans-serif'].join(','),
         fontWeightLight: 100,
