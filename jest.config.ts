@@ -9,10 +9,12 @@ const config: Config.InitialOptions = {
         '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
     },
     testEnvironment: 'jsdom',
+    verbose: true,
     moduleNameMapper: {
+        'src/(.*)': '<rootDir>/src/$1',
+        'tests/(.*)': '<rootDir>/tests/$1',
         '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     },
-    verbose: true,
 };
 
 export default config;

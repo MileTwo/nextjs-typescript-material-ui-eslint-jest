@@ -1,8 +1,9 @@
-import { Button, Grid, makeStyles, Theme, Typography } from '@material-ui/core';
+import { Button, Grid, Theme, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
 import { Tool, tools } from '../../lib/tools';
 import { ReactElement } from 'react';
 import Layout from '../../components/layout';
