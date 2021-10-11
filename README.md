@@ -52,7 +52,7 @@ Starts the application in development mode with hot-code reloading, error report
 The application will start at http://localhost:3000 by default. The default port can be changed with -p, like so:
 
 ```bash
-npm run dev -p 4000
+npm run dev -- -p 4000
 ```
 
 ### format
