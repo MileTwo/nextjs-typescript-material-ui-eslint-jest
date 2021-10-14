@@ -1,62 +1,79 @@
 {
-  "files": [
-    "README.md"
-  ],
-  "imageSize": 100,
-  "commit": false,
-  "contributors": [
-    {
-      "login": "keonik",
-      "name": "John Fay",
-      "avatar_url": "https://avatars.githubusercontent.com/u/46365891?v=4",
-      "profile": "http://johnfay.dev",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
-      "login": "storiesOfRen",
-      "name": "Ren Estep",
-      "avatar_url": "https://avatars.githubusercontent.com/u/22155535?v=4",
-      "profile": "http://renestep.com",
-      "contributions": [
-        "code",
-        "a11y"
-      ]
-    },
-    {
-      "login": "heystevegray",
-      "name": "Steve Gray",
-      "avatar_url": "https://avatars.githubusercontent.com/u/66500112?v=4",
-      "profile": "https://heystevegray.dev/",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
-      "login": "jenniferOlsen",
-      "name": "Jenny Olsen",
-      "avatar_url": "https://avatars.githubusercontent.com/u/5099732?v=4",
-      "profile": "https://github.com/jenniferOlsen",
-      "contributions": [
-        "doc"
-      ]
-    },
-    {
-      "login": "bcanfield",
-      "name": "Brandin Canfield",
-      "avatar_url": "https://avatars.githubusercontent.com/u/12603953?v=4",
-      "profile": "https://github.com/bcanfield",
-      "contributions": [
-        "maintenance",
-        "infra"
-      ]
-    }
-  ],
-  "contributorsPerLine": 7,
-  "projectName": "nextjs-typescript-material-ui-eslint-jest",
-  "projectOwner": "MileTwo",
-  "repoType": "github",
-  "repoHost": "https://github.com",
-  "skipCi": true
+    "files": [
+        "README.md"
+    ],
+    "imageSize": 100,
+    "commit": false,
+    "contributors": [
+        {
+            "login": "keonik",
+            "name": "John Fay",
+            "avatar_url": "https://avatars.githubusercontent.com/u/46365891?v=4",
+            "profile": "http://johnfay.dev",
+            "contributions": [
+                "code",
+                "doc",
+                "maintenance",
+                "infra"
+            ]
+        },
+        {
+            "login": "storiesOfRen",
+            "name": "Ren Estep",
+            "avatar_url": "https://avatars.githubusercontent.com/u/22155535?v=4",
+            "profile": "http://renestep.com",
+            "contributions": [
+                "code",
+                "a11y",
+                "maintenance"
+            ]
+        },
+        {
+            "login": "heystevegray",
+            "name": "Steve Gray",
+            "avatar_url": "https://avatars.githubusercontent.com/u/66500112?v=4",
+            "profile": "https://heystevegray.dev/",
+            "contributions": [
+                "code",
+                "doc",
+                "maintenance"
+            ]
+        },
+        {
+            "login": "jenniferOlsen",
+            "name": "Jenny Olsen",
+            "avatar_url": "https://avatars.githubusercontent.com/u/5099732?v=4",
+            "profile": "https://github.com/jenniferOlsen",
+            "contributions": [
+                "doc"
+            ]
+        },
+        {
+            "login": "bcanfield",
+            "name": "Brandin Canfield",
+            "avatar_url": "https://avatars.githubusercontent.com/u/12603953?v=4",
+            "profile": "https://github.com/bcanfield",
+            "contributions": [
+                "maintenance",
+                "infra",
+                "security"
+            ]
+        },
+        {
+            "login": "lucasguiss",
+            "name": "Lucas Guiss Gusmão",
+            "avatar_url": "https://avatars.githubusercontent.com/u/37088202?v=4",
+            "profile": "http://linkedin.com/in/lucasguissgusmao",
+            "contributions": [
+                "doc"
+            ]
+        }
+    ],
+    "contributorsPerLine": 7,
+    "projectName": "nextjs-typescript-material-ui-eslint-jest",
+    "projectOwner": "MileTwo",
+    "repoType": "github",
+    "repoHost": "https://github.com",
+    "skipCi": true,
+    "commitConvention": "none"
 }
