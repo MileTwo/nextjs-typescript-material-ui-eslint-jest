@@ -23,6 +23,15 @@
         "code",
         "a11y"
       ]
+    },
+    {
+      "login": "heystevegray",
+      "name": "Steve Gray",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66500112?v=4",
+      "profile": "https://heystevegray.dev/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
