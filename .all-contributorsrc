@@ -13,6 +13,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "storiesOfRen",
+      "name": "Ren Estep",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22155535?v=4",
+      "profile": "http://renestep.com",
+      "contributions": [
+        "code",
+        "a11y"
+      ]
     }
   ],
   "contributorsPerLine": 7,

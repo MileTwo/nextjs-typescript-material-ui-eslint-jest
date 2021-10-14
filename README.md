@@ -123,6 +123,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="http://renestep.com"><img src="https://avatars.githubusercontent.com/u/22155535?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ren Estep</b></sub></a><br /><a href="https://github.com/MileTwo/nextjs-typescript-material-ui-eslint-jest/commits?author=storiesOfRen" title="Code">💻</a> <a href="#a11y-storiesOfRen" title="Accessibility">️️️️♿️</a></td>
     <td align="center"><a href="http://johnfay.dev"><img src="https://avatars.githubusercontent.com/u/46365891?v=4?s=100" width="100px;" alt=""/><br /><sub><b>John Fay</b></sub></a><br /><a href="https://github.com/MileTwo/nextjs-typescript-material-ui-eslint-jest/commits?author=keonik" title="Code">💻</a></td>
   </tr>
 </table>
