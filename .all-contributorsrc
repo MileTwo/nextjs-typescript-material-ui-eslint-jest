@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "keonik",
+      "name": "John Fay",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46365891?v=4",
+      "profile": "http://johnfay.dev",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "nextjs-typescript-material-ui-eslint-jest",
+  "projectOwner": "MileTwo",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
