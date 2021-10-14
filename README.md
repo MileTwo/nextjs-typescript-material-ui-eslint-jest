@@ -1,4 +1,7 @@
 # Next.js TypeScript Material UI quality checking project
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Includes TypeScript, Material UI, ESLint, Jest, and React Testing Library
 
@@ -110,3 +113,23 @@ npm run quality
 ### @axe-core/react
 
 Runs in development environment and logs accessibility error results in dev tools console. Tool implementation is in `pages/_app.tsx`.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://renestep.com"><img src="https://avatars.githubusercontent.com/u/22155535?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ren Estep</b></sub></a><br /><a href="https://github.com/MileTwo/nextjs-typescript-material-ui-eslint-jest/commits?author=storiesOfRen" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
