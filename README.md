@@ -1,5 +1,11 @@
 # 🚨 Archived and moved to [MileTwo/nextjs-ts](https://github.com/MileTwo/nextjs-ts) 🚨
 
+We archived this repository for two reasons
+- This repo is used in our CLI tool for creating new nextjs projects [create-m2-app](https://www.npmjs.com/package/create-m2-app). In our version <0.4.x we had three templates in this one repository: `next`, `next-prisma-rest`, and `nest-prisma-graphql`. We wanted to rename it but if we did so it would cause breaking changes to the users using `create-m2-app` with older versions.
+-  This repository serving as three repo's was challenging us to maintain and review PR's. We realized this wasn't going to be easy to maintain and share the load for open source maintanance. So we decided to split them up. In the split up version 0.4.0 of `create-m2-app` split out the [prisma-rest](https://github.com/MileTwo/nextjs-ts-prisma-rest) and the [prisma-graphql](https://github.com/MileTwo/nextjs-ts-prisma-auto-graphql) repositories. In version `0.5.0` we archived the repository you are viewing and moved it to [nextjs-ts](https://github.com/MileTwo/nextjs-ts).
+
+Huge shoutout to all the contributors and maintainers on this project! You should still see yourself on our all-contributors list in the new repository
+
 # Next.js TypeScript Material UI quality checking project
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
